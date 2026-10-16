@@ -63,7 +63,7 @@ export interface AwardRecord {
   eventName: string; // "Iconic Creation Of God 2026"
   eventDate: string; // "21 December 2026"
   issueDate: string; // "21 December 2026"
-  guestOfHonour: string; // "Jivitha Sharma — Acclaimed Bollywood Actress"
+  guestOfHonour: string; // "Jividha Sharma — Acclaimed Bollywood Actress"
   organizers: string; // "Deven Jha & Ritu Jha"
   presenters: string; // "Janta Live News & Deven Jha Productions"
   status: VerificationStatus;

@@ -4,6 +4,7 @@ import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
 import { registrationService } from '../services/registrationService';
 import { PageantCategory } from '../types';
 import { SEO } from '../components/common/SEO';
+import { CelebrityGuestProfile } from '../components/common/CelebrityGuestProfile';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -427,77 +428,8 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* CELEBRITY GUEST SPOTLIGHT: Jivitha Sharma */}
-      <section className="w-full px-margin-mobile lg:px-margin py-space-xl max-w-7xl mx-auto">
-        <div className="relative rounded-3xl bg-surface-container-lowest p-space-lg lg:p-space-xl border border-primary/30 overflow-hidden shadow-2xl">
-          <div className="absolute -top-24 -right-24 w-80 h-80 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
-
-          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-            {/* Celebrity Portrait with Royal Frame */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-full max-w-sm rounded-2xl overflow-hidden p-2 bg-gradient-to-b from-primary/50 via-surface-container-high to-surface-container-lowest shadow-2xl">
-                <div className="relative h-[480px] w-full rounded-xl overflow-hidden">
-                  <img
-                    src={BRAND_ASSETS.celebrityJivitha}
-                    alt="Bollywood Actress Jivitha Sharma"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4 text-center">
-                    <span className="font-headline-md text-headline-md text-primary font-bold block">
-                      Jivitha Sharma
-                    </span>
-                    <span className="font-label-sm text-label-sm text-on-surface uppercase tracking-widest font-semibold">
-                      Bollywood Actress
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Description & Quotes */}
-            <div className="lg:col-span-7 flex flex-col gap-space-md">
-              <div className="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-primary/10 border border-primary/30 w-fit">
-                <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  stars
-                </span>
-                <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
-                  Guest of Honour • VIP Felicitator
-                </span>
-              </div>
-              <h2 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight font-semibold">
-                Graced by Bollywood Luminary <span className="text-primary italic">Jivitha Sharma</span>
-              </h2>
-              <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                The grand coronation of Iconic Creation Of God will be privileged by the distinguished presence of Bollywood actress Jivitha Sharma. As our esteemed Guest of Honour, she will officiate the grand trophy handovers and crown this year's sovereigns.
-              </p>
-
-              {/* Quote Card */}
-              <div className="p-space-md rounded-2xl bg-surface-container-high/60 backdrop-blur-md border border-outline-variant/30">
-                <span className="material-symbols-outlined text-primary text-2xl">format_quote</span>
-                <p className="font-title-lg text-title-lg italic text-on-surface mt-1 font-serif">
-                  “Delhi NCR is a reservoir of authentic talent and untamed passion. Iconic Creation Of God creates a royal gateway for artists to shine under true national spotlight.”
-                </p>
-                <span className="block mt-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">
-                  — Jivitha Sharma
-                </span>
-              </div>
-
-              {/* Feature Bullets */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
-                <div className="flex items-center gap-space-xs text-on-surface">
-                  <span className="material-symbols-outlined text-primary text-base">military_tech</span>
-                  <span className="font-body-sm text-body-sm font-medium">Official Trophy & Sash Presentation</span>
-                </div>
-                <div className="flex items-center gap-space-xs text-on-surface">
-                  <span className="material-symbols-outlined text-primary text-base">photo_camera</span>
-                  <span className="font-body-sm text-body-sm font-medium">Red Carpet Media Interaction</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* CELEBRITY GUEST SPOTLIGHT: Jividha Sharma Profile */}
+      <CelebrityGuestProfile />
 
       {/* EXCLUSIVE OPPORTUNITY: 'Devi And Diva' */}
       <section className="w-full bg-surface-container-low py-space-xl">

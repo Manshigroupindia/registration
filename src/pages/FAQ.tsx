@@ -41,7 +41,7 @@ export const FAQ: React.FC = () => {
     {
       category: 'Awards & Felicitation',
       q: 'Who is the Celebrity Guest presenting the awards?',
-      a: 'Acclaimed Bollywood actress Jivitha Sharma is our distinguished Guest of Honour. She will officiate the grand trophy and sash presentations during the twilight Award Show.',
+      a: 'Acclaimed Bollywood actress Jividha Sharma is our distinguished Guest of Honour. She will officiate the grand trophy and sash presentations during the twilight Award Show.',
     },
     {
       category: 'Film Casting',

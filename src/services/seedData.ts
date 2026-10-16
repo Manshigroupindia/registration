@@ -75,7 +75,7 @@ export const INITIAL_AWARDS: AwardRecord[] = [
     eventName: 'Iconic Creation Of God 2026',
     eventDate: '21 December 2026',
     issueDate: '21 December 2026',
-    guestOfHonour: 'Jivitha Sharma — Acclaimed Bollywood Actress',
+    guestOfHonour: 'Jividha Sharma — Acclaimed Bollywood Actress',
     organizers: 'Deven Jha & Ritu Jha',
     presenters: 'Janta Live News & Deven Jha Productions',
     status: 'verified',
@@ -90,7 +90,7 @@ export const INITIAL_AWARDS: AwardRecord[] = [
     eventName: 'Iconic Creation Of God 2026',
     eventDate: '21 December 2026',
     issueDate: '21 December 2026',
-    guestOfHonour: 'Jivitha Sharma — Acclaimed Bollywood Actress',
+    guestOfHonour: 'Jividha Sharma — Acclaimed Bollywood Actress',
     organizers: 'Deven Jha & Ritu Jha',
     presenters: 'Janta Live News & Deven Jha Productions',
     status: 'verified',
@@ -105,7 +105,7 @@ export const INITIAL_AWARDS: AwardRecord[] = [
     eventName: 'Iconic Creation Of God 2026',
     eventDate: '21 December 2026',
     issueDate: '21 December 2026',
-    guestOfHonour: 'Jivitha Sharma — Bollywood Actress',
+    guestOfHonour: 'Jividha Sharma — Bollywood Actress',
     organizers: 'Deven Jha & Ritu Jha',
     presenters: 'Janta Live News & Deven Jha Productions',
     status: 'revoked',
@@ -219,9 +219,9 @@ export const INITIAL_SITE_SETTINGS: SiteSettings = {
     }
   },
   celebrityGuest: {
-    name: 'Jivitha Sharma',
+    name: 'Jividha Sharma',
     title: 'Bollywood Actress',
-    bio: 'The grand coronation of Iconic Creation Of God will be privileged by the distinguished presence of Bollywood actress Jivitha Sharma. As our esteemed Guest of Honour, she will officiate the grand trophy handovers and crown this year’s sovereigns.',
+    bio: 'The grand coronation of Iconic Creation Of God will be privileged by the distinguished presence of Bollywood actress Jividha Sharma. As our esteemed Guest of Honour, she will officiate the grand trophy handovers and crown this year’s sovereigns.',
     quote: 'Delhi NCR is a reservoir of authentic talent and untamed passion. Iconic Creation Of God creates a royal gateway for artists to shine under true national spotlight.',
     photoUrl: BRAND_ASSETS.celebrityJivitha
   },

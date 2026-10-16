@@ -25,10 +25,10 @@ export const Gallery: React.FC = () => {
     },
     {
       id: 'gal-2',
-      title: 'Bollywood Guest of Honour Jivitha Sharma',
+      title: 'Jividha Sharma – Celebrity Guest at Iconic Creation Of God',
       category: 'Celebrity',
       imageUrl: BRAND_ASSETS.celebrityJivitha,
-      description: 'Acclaimed actress Jivitha Sharma gracing the red carpet as VIP Felicitator.',
+      description: 'Acclaimed actress Jividha Sharma gracing the red carpet as VIP Felicitator and Guest of Honour.',
     },
     {
       id: 'gal-3',

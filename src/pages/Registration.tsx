@@ -87,7 +87,7 @@ export const Registration: React.FC = () => {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span>Auditions will be evaluated by Bollywood Actress Jivitha Sharma and the jury panel.</span>
+                <span>Auditions will be evaluated by Bollywood Actress Jividha Sharma and the jury panel.</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />

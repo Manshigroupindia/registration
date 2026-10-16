@@ -69,7 +69,7 @@ export const AboutUs: React.FC = () => {
               Our Pageant Mission
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-              We provide structured training masterclasses, cinematic talent scouting for genuine film productions like ‘Devi And Diva’, and formal felicitation from celebrated Bollywood luminaries like Jivitha Sharma.
+              We provide structured training masterclasses, cinematic talent scouting for genuine film productions like ‘Devi And Diva’, and formal felicitation from celebrated Bollywood luminaries like Jividha Sharma.
             </p>
             <ul className="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface mt-2">
               <li className="flex items-center gap-2">

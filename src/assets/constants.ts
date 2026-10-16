@@ -4,7 +4,8 @@ export const BRAND_ASSETS = {
   categoryMr: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC7ezH5wv7CMgnXcGufmi3aELiJ9RsHNnCQTFKGxRJ-pczM7Ju-_uUQE8m61lSWoX3UQfAb2h9HhHM8Ip4jF3tdkxuVtNsvHSKBNEI_fNLbcXb2xkyJ9xWP_bZ4pcODr6KNKsE9d403dJJ_HH_A7kbny8yKnXBJACRIgZbKFU9bgxL6A1Nw-APSg21z8qfmnyU99WwFM6AYhJpsl_sTO9OC28g0UYm5xV4pCIbCyrsdYu3vXaXrz-0Q',
   categoryMiss: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBIWhLszg5dtAkWjCGWlZyMNucOHKP-E3ETn4goCZ9lhHLmgVjZ4vkAMRQBqXdzpOPDHE3Y3821tM98HyrZoAkdRSoT0x-M_OUM_pbVvuwkDAZDe_mHfZXAARaPY63wfA2_r-aMJiSv2MmPx3RiRKVYv7iY4oq33m0_932IWOWCEwqIjpadVEmnJqzC_q0XVRdoDE3pkcpe4je7t873en7i_BA63mqHU5efq2faJKfTmy0guNrmYTQf',
   categoryMrs: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCRijyJNlgezXoaQ2lHy7ZDPBwpQpaGsGi5qsPpqje9X9DW5-r3eNQuYQJGmZhS0YyyItZMaI1p74wGeLujCwfkcH5NUDpicZY828q0vLOgHaSlmH2bZWFWJmvbMEYj-2Jj1g-h-eoZlzSxX8YMv-0Pz5SxCXGrIXPP1BghV9R-QVoOeNIJ80UQ_hziRxAonHk01tGYXl1qVx4GvelA_fJUGfVnnkSQb2TJUJEVAWfRgvwrF9BibNRA',
-  celebrityJivitha: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCXjurvqyx5RA9WU35JqhEjwxUAXwSkDX-ABDOLNW_KwrATjdKQwBgE3efHxzrVqGC5oY4AKyxyRZz2Rdo5FXaRFQQuMrFBnztjLmVBgxYfbF-_COezCzBOgclzAWrBhrNRYg3oJeYL8ESgd25X4lEnY9YDixrPfKUmPJj8hSLn-4idqiAl4SDJbIPPrnO2kZhhiiEPWnY5qpDh0r4I9OMjM7bOywmHfOIF3a9e_oS-OVAc-lUxXLD_',
+  celebrityJivitha: 'https://jantalive.in/wp-content/uploads/2026/10/jividha-sharma.jpg',
+  celebrityJividha: 'https://jantalive.in/wp-content/uploads/2026/10/jividha-sharma.jpg',
   deviAndDiva: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMnpK_4Cs4K0UZ8EbnCu0mW3YiXpprL0vMQ10iMlClzVgEwZ-Y2eZ_uBPndXl89VyZZ7KM39qJYCi1IavU2DIzGl_FRBeGw2sjnARyaam5jckM22mOZSGHEF2aaGzNnpKOfCt1ZpGBdOFp8iKc1_L__yLppUBdK-NQDaMsjjzk943zKVTjU28Zhl3VlhYAjXMsFoz9Bc7jA870a9tk_nAgio1dIIm2WHokoA1o6fMy0I7W_dblalyl',
   organizerDeven: 'https://jantalive.in/wp-content/uploads/2026/07/Screenshot-2026-07-02-151425.png',
   organizerRitu: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDr5AypMPLpPfGyL-IqExvXl5y233tajAnIsJ19KNW2XiD5EL33_msDtyqBoqqsotmfYPzpsgJ55KrTxkb0ZAarbdQmRGA6UGUStRs5g75WE8vLzAAtXnDz9Ea6ArrcXfEuXgm_u8YvqR7yE-55rjHFHOXkbs80sFDSBVHNllV1670fNnqVC93TyeNpSN7CLz2OGUU9tE0c8kKE2RgA3KMaHW0zhl_nSgQRRf0Kt0aBW5SE2jtBl5fh',
@@ -22,5 +23,46 @@ export const EVENT_DETAILS = {
   location: 'Delhi / NCR',
   presentedBy: 'Janta Live News & Deven Jha Productions',
   organizers: 'Deven Jha & Ritu Jha',
-  celebrityGuest: 'Jivitha Sharma — Bollywood Actress',
+  celebrityGuest: 'Jividha Sharma — Bollywood Actress',
+};
+
+export const CELEBRITY_PROFILE = {
+  name: 'Jividha Sharma',
+  title: 'Celebrity Guest & VIP Felicitator',
+  designation: 'Bollywood & Indian Cinema Actress',
+  photo: 'https://jantalive.in/wp-content/uploads/2026/10/jividha-sharma.jpg',
+  alt: 'Jividha Sharma – Celebrity Guest at Iconic Creation Of God',
+  introduction:
+    'Jividha Sharma is an Indian actress known for her work in Hindi cinema, Punjabi films, and television. She has appeared in several films and TV serials, making her a familiar face among audiences. Join us at Iconic Creation Of God — Mr/Miss/Mrs for this special event featuring celebrity guest Jividha Sharma.',
+  famousMovies: [
+    { title: 'Yeh Dil Aashiqanaa', year: '2002' },
+    { title: 'Taal', year: '1999' },
+    { title: 'Mohenjo Daro', year: '2016' },
+    { title: 'Yaar Anmulle', year: '2011' },
+    { title: 'Mini Punjab', year: '2009' },
+    { title: 'The Lion of Punjab', year: '2011' },
+  ],
+  famousTvSerials: [
+    { title: 'Tum Bin Jaaoon Kahaan', year: '2003–2004' },
+    { title: 'Zameen Se Aasman Tak', year: '2004' },
+    { title: 'Doli Saja Ke', year: '2008' },
+  ],
+};
+
+export const VENUE_VIDEO_DETAILS = {
+  videoUrl: 'https://jantalive.in/wp-content/uploads/2026/10/iconic-evet-venu-video.mp4',
+  posterUrl: 'https://jantalive.in/wp-content/uploads/2026/10/Iconic-Creation-Awards-Gala-1.jpg',
+  sectionTitle: 'Explore Our Event Venue',
+  sectionBadge: 'Official Event Location • Delhi / NCR',
+  cardTitle: 'Explore the Banquet Hall for Our December 21 Event',
+  englishDescription: [
+    '❤️ Dear Friends, take a look at the banquet hall prepared for our special event on December 21, 2026!',
+    'The main event will take place on the ground floor, while lunch arrangements will be available on the first floor.',
+    '🎉 We are preparing a wonderful event for you, presented by Janta Live News and Deven Jha Productions. Watch the venue video to get a glimpse of the arrangements and the event location.',
+    "☺️ Book your seats as soon as possible so you don't miss this exciting event. We look forward to welcoming you!",
+  ],
+  hindiDescription: [
+    '❤️ दोस्तों, हमारे 21 दिसंबर वाले शो का बैंक्वेट हॉल देखिए, जहाँ ग्राउंड फ्लोर पर इवेंट होगा और फर्स्ट फ्लोर पर लंच की व्यवस्था रहेगी।',
+    '☺️ जल्दी से जल्दी अपनी सीट बुक कर लीजिए, नहीं तो आप हमारे न्यूज़ चैनल के इस शानदार इवेंट को मिस कर देंगे!',
+  ],
 };

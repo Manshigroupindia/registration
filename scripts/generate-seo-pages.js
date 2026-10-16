@@ -76,7 +76,7 @@ const ROUTES_CONFIG = [
       ],
       performer: {
         '@type': 'Person',
-        name: 'Jivitha Sharma',
+        name: 'Jividha Sharma',
         jobTitle: 'Bollywood Actress & Celebrity Guest',
       },
     },
@@ -194,7 +194,7 @@ const ROUTES_CONFIG = [
           name: 'Who is the Celebrity Guest presenting the awards?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Acclaimed Bollywood actress Jivitha Sharma is the distinguished Guest of Honour conferring awards and sashes.',
+            text: 'Acclaimed Bollywood actress Jividha Sharma is the distinguished Guest of Honour conferring awards and sashes.',
           },
         },
       ],

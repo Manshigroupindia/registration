@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
 import { Sparkles, Calendar, Clock, MapPin, Award, CheckCircle2, Video, Camera, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
+import { CelebrityGuestProfile } from '../components/common/CelebrityGuestProfile';
+import { VenueVideoSection } from '../components/common/VenueVideoSection';
 
 export const EventActivities: React.FC = () => {
   return (
@@ -235,13 +237,13 @@ export const EventActivities: React.FC = () => {
               <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/40">
                 <img
                   src={BRAND_ASSETS.celebrityJivitha}
-                  alt="Jivitha Sharma Felicitation"
+                  alt="Jividha Sharma – Celebrity Guest at Iconic Creation Of God"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-center">
                   <span className="font-headline-md text-headline-md text-primary font-bold block">
-                    Jivitha Sharma
+                    Jividha Sharma
                   </span>
                   <span className="font-label-sm text-label-sm uppercase text-on-surface tracking-widest font-semibold">
                     Guest of Honour & VIP Felicitator
@@ -259,7 +261,7 @@ export const EventActivities: React.FC = () => {
                 IV. The Grand Award Show & Coronation
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                The pinnacle of Iconic Creation Of God. Winners across Mr, Miss, Mrs, and Makeup Competition tracks are crowned on the sovereign gala stage. Bollywood actress <strong>Jivitha Sharma</strong> personally confers the royal sashes, certificates, and crystal trophies before live broadcast cameras.
+                The pinnacle of Iconic Creation Of God. Winners across Mr, Miss, Mrs, and Makeup Competition tracks are crowned on the sovereign gala stage. Bollywood actress <strong>Jividha Sharma</strong> personally confers the royal sashes, certificates, and crystal trophies before live broadcast cameras.
               </p>
               <div className="p-space-md rounded-2xl bg-surface-container-lowest border border-outline-variant/30 flex flex-col gap-2 font-body-sm text-body-sm">
                 <div className="flex items-center gap-2">
@@ -288,6 +290,12 @@ export const EventActivities: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* MEET OUR CELEBRITY GUEST: Detailed Filmography & Bio Profile */}
+      <CelebrityGuestProfile showCta={false} className="border-t border-outline-variant/30" />
+
+      {/* EXPLORE OUR EVENT VENUE: Dedicated Video & Announcement Walkthrough */}
+      <VenueVideoSection className="border-t border-outline-variant/30" />
     </div>
   );
 };
