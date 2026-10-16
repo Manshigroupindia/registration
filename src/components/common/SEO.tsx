@@ -14,7 +14,7 @@ const DEFAULT_TITLE = 'Iconic Creation Of God | Mr, Miss & Mrs';
 const DEFAULT_DESCRIPTION =
   'Celebrate talent, confidence and achievement at Iconic Creation Of God — Mr/Miss/Mrs, presented by Janta Live News & Deven Jha Productions. Explore event details and register online.';
 const DEFAULT_IMAGE =
-  'https://jantalive.in/wp-content/uploads/2026/10/Janta-Live-Iconic-Stage-Awards.png';
+  'https://jantalive.in/wp-content/uploads/2026/10/Iconic-Creation-Awards-Gala.jpg';
 const BASE_URL = 'https://registration.jantalive.in';
 
 export const SEO: React.FC<SEOProps> = ({

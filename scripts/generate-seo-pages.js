@@ -15,7 +15,7 @@ if (!fs.existsSync(templatePath)) {
 
 const templateHtml = fs.readFileSync(templatePath, 'utf8');
 
-const SOCIAL_BANNER = 'https://jantalive.in/wp-content/uploads/2026/10/Janta-Live-Iconic-Stage-Awards.png';
+const SOCIAL_BANNER = 'https://jantalive.in/wp-content/uploads/2026/10/Iconic-Creation-Awards-Gala.jpg';
 const BASE_URL = 'https://registration.jantalive.in';
 
 const ROUTES_CONFIG = [
