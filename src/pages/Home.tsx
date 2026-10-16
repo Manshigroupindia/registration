@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
 import { registrationService } from '../services/registrationService';
 import { PageantCategory } from '../types';
+import { SEO } from '../components/common/SEO';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -53,6 +54,11 @@ export const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full overflow-hidden">
+      <SEO
+        title="Iconic Creation Of God | Mr, Miss & Mrs"
+        description="Celebrate talent, confidence and achievement at Iconic Creation Of God — Mr/Miss/Mrs, presented by Janta Live News & Deven Jha Productions. Explore event details and register online."
+        canonical="https://registration.jantalive.in/"
+      />
       {/* HERO SECTION: Atmospheric Red Carpet Stage */}
       <section className="relative w-full overflow-hidden bg-surface-container-lowest pt-20 pb-space-xl">
         {/* Ambient Golden Runway Spotlights */}

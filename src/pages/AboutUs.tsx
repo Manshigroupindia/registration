@@ -2,10 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
 import { ShieldCheck, Film, Newspaper, ExternalLink, Target, Eye, Award, CheckCircle } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const AboutUs: React.FC = () => {
   return (
     <div className="flex flex-col w-full min-h-screen">
+      <SEO
+        title="About Us | Iconic Creation Of God — Mr, Miss & Mrs"
+        description="Learn about Iconic Creation Of God, presented by Janta Live News and Deven Jha Productions under the visionary direction of Deven Jha and Ritu Jha."
+        canonical="https://registration.jantalive.in/about"
+      />
       {/* Header Banner */}
       <section className="relative w-full bg-surface-container-lowest py-20 px-margin-mobile lg:px-margin overflow-hidden border-b border-outline-variant/30">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[130px] rounded-full pointer-events-none"></div>

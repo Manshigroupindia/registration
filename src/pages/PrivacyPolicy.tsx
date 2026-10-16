@@ -1,9 +1,15 @@
 import React from 'react';
 import { Shield } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const PrivacyPolicy: React.FC = () => {
   return (
     <div className="flex flex-col w-full min-h-screen">
+      <SEO
+        title="Privacy Policy | Iconic Creation Of God"
+        description="Read our privacy policy regarding data collection, audition portfolios, payment transaction receipts, and digital verification records."
+        canonical="https://registration.jantalive.in/privacy-policy"
+      />
       <section className="relative w-full bg-surface-container-lowest py-16 px-margin-mobile lg:px-margin border-b border-outline-variant/30 text-center">
         <div className="max-w-4xl mx-auto flex flex-col items-center">
           <div className="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high border border-primary/30 mb-space-sm shadow-sm">

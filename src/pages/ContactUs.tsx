@@ -3,6 +3,7 @@ import { enquiryService } from '../services/enquiryService';
 import { EVENT_DETAILS } from '../assets/constants';
 import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Clock, Instagram, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/common/SEO';
 
 export const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -48,6 +49,11 @@ export const ContactUs: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full min-h-screen">
+      <SEO
+        title="Contact Us | Iconic Creation Of God Secretariat Desk"
+        description="Get in touch with the Iconic Creation Of God organizing committee for audition queries, sponsorship partnerships, and media accreditations."
+        canonical="https://registration.jantalive.in/contact"
+      />
       {/* Header */}
       <section className="relative w-full bg-surface-container-lowest py-20 px-margin-mobile lg:px-margin border-b border-outline-variant/30 text-center overflow-hidden">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[130px] rounded-full pointer-events-none"></div>

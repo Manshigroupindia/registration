@@ -4,6 +4,7 @@ import { certificateService } from '../services/certificateService';
 import { pdfService } from '../services/pdfService';
 import { CertificateRecord, VerificationStatus } from '../types';
 import { PrintableCertificate } from '../components/certificate/PrintableCertificate';
+import { SEO } from '../components/common/SEO';
 import { 
   ShieldCheck, 
   Search, 
@@ -72,6 +73,11 @@ export const CertificateVerification: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full min-h-screen">
+      <SEO
+        title="Verify Certificate | Iconic Creation Of God Official Ledger"
+        description="Authenticate official candidate, seminar, and participation certificates issued by Iconic Creation Of God & Janta Live News on the live digital ledger."
+        canonical="https://registration.jantalive.in/verify-certificate"
+      />
       {/* Top Stage Ambient Accent */}
       <div className="relative w-full overflow-hidden px-margin-mobile lg:px-margin py-space-xl">
         <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-gradient-to-b from-primary/10 via-primary-container/5 to-transparent blur-3xl rounded-full"></div>

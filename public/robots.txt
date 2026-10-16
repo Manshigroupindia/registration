@@ -1,0 +1,11 @@
+# robots.txt for Iconic Creation Of God (https://registration.jantalive.in/)
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /admin/*
+
+# Host
+Host: https://registration.jantalive.in
+
+# XML Sitemap
+Sitemap: https://registration.jantalive.in/sitemap.xml

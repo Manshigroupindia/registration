@@ -2,10 +2,16 @@ import React from 'react';
 import { RegistrationForm } from '../components/registration/RegistrationForm';
 import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
 import { Sparkles, Calendar, MapPin, Clock, Award, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const Registration: React.FC = () => {
   return (
     <div className="min-h-screen pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-background text-on-surface">
+      <SEO
+        title="Register Online | Iconic Creation Of God Auditions & Passes"
+        description="Official registration portal for Iconic Creation Of God Mr, Miss & Mrs. Submit your candidate nomination, seminar passes, and awards entry online."
+        canonical="https://registration.jantalive.in/register"
+      />
       <div className="max-w-6xl mx-auto space-y-12">
         
         {/* Hero Section */}

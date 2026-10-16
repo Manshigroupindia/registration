@@ -4,6 +4,7 @@ import { awardService } from '../services/awardService';
 import { pdfService } from '../services/pdfService';
 import { AwardRecord, VerificationStatus } from '../types';
 import { QRCodeDisplay } from '../components/common/QRCodeDisplay';
+import { SEO } from '../components/common/SEO';
 import { 
   Trophy, 
   Search, 
@@ -91,6 +92,11 @@ export const AwardVerification: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full relative min-h-screen">
+      <SEO
+        title="Verify Award & Trophy | Iconic Creation Of God Honors Registry"
+        description="Verify official awards, trophies, and felicitations conferred at Iconic Creation Of God with authentic citation records and celebrity endorsements."
+        canonical="https://registration.jantalive.in/verify-award"
+      />
       {/* Ambient Red-Carpet Gold Radial Glows */}
       <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[550px] bg-[radial-gradient(ellipse_at_top,rgba(242,193,72,0.12)_0%,rgba(23,19,15,0)_70%)] opacity-80 z-0"></div>
 

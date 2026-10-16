@@ -1,9 +1,15 @@
 import React from 'react';
 import { Scale } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const TermsAndConditions: React.FC = () => {
   return (
     <div className="flex flex-col w-full min-h-screen">
+      <SEO
+        title="Terms & Conditions | Iconic Creation Of God"
+        description="Review the official terms, candidate code of conduct, registration guidelines, and event policies for Iconic Creation Of God."
+        canonical="https://registration.jantalive.in/terms"
+      />
       <section className="relative w-full bg-surface-container-lowest py-16 px-margin-mobile lg:px-margin border-b border-outline-variant/30 text-center">
         <div className="max-w-4xl mx-auto flex flex-col items-center">
           <div className="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high border border-primary/30 mb-space-sm shadow-sm">

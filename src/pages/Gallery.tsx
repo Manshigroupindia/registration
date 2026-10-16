@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BRAND_ASSETS } from '../assets/constants';
 import { Image, X, ZoomIn, Sparkles } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 interface GalleryItem {
   id: string;
@@ -86,6 +87,11 @@ export const Gallery: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full min-h-screen">
+      <SEO
+        title="Official Media Gallery | Iconic Creation Of God Runway & Gala"
+        description="Browse high-resolution photographs, runway moments, celebrity appearances, and award ceremony highlights from Iconic Creation Of God events."
+        canonical="https://registration.jantalive.in/gallery"
+      />
       {/* Header */}
       <section className="relative w-full bg-surface-container-lowest py-20 px-margin-mobile lg:px-margin border-b border-outline-variant/30 text-center overflow-hidden">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[130px] rounded-full pointer-events-none"></div>

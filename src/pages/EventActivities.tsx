@@ -2,10 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
 import { Sparkles, Calendar, Clock, MapPin, Award, CheckCircle2, Video, Camera, ArrowRight } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const EventActivities: React.FC = () => {
   return (
     <div className="flex flex-col w-full min-h-screen">
+      <SEO
+        title="Event & Activities | Iconic Creation Of God 2026"
+        description="Discover the 4 key activities at Iconic Creation Of God: Luxury Makeup Artistry Seminar, Makeup Competition, Fashion Runway Ramp Walk, and Celebrity Grand Award Show."
+        canonical="https://registration.jantalive.in/event"
+      />
       {/* Hero Header */}
       <section className="relative w-full bg-surface-container-lowest py-20 px-margin-mobile lg:px-margin border-b border-outline-variant/30 overflow-hidden">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[400px] bg-primary/10 blur-[140px] rounded-full pointer-events-none"></div>

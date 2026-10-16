@@ -3,6 +3,7 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { BRAND_ASSETS } from '../../assets/constants';
 import { ShieldCheck, Lock, Mail, ArrowLeft, AlertCircle } from 'lucide-react';
+import { SEO } from '../../components/common/SEO';
 
 export const AdminLogin: React.FC = () => {
   const [email, setEmail] = useState('admin@iconiccreationofgod.com');
@@ -33,6 +34,11 @@ export const AdminLogin: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-surface-container-lowest flex flex-col justify-center items-center px-4 py-12 relative overflow-hidden">
+      <SEO
+        title="Admin Portal | Iconic Creation Of God"
+        description="Private administrative portal."
+        noindex={true}
+      />
       {/* Ambient Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 blur-[130px] rounded-full pointer-events-none"></div>
 

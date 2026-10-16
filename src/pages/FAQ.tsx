@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/common/SEO';
 
 interface FAQItem {
   q: string;
@@ -56,6 +57,11 @@ export const FAQ: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full min-h-screen">
+      <SEO
+        title="Frequently Asked Questions | Iconic Creation Of God Pageant & Awards"
+        description="Find answers about audition criteria, category guidelines, registration fees, seminar schedules, venue access, and certificate verification."
+        canonical="https://registration.jantalive.in/faq"
+      />
       {/* Header */}
       <section className="relative w-full bg-surface-container-lowest py-20 px-margin-mobile lg:px-margin border-b border-outline-variant/30 text-center overflow-hidden">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[130px] rounded-full pointer-events-none"></div>
