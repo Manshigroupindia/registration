@@ -1,0 +1,3080 @@
+<div id="rha-registration-wrapper">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+#rha-registration-wrapper{
+    width:100%;
+    max-width:880px;
+    margin:35px auto;
+    padding:15px;
+    font-family:'DM Sans',sans-serif;
+    color:#171717;
+}
+
+#rha-registration-wrapper *{
+    box-sizing:border-box;
+}
+
+.rha-card{
+    width:100%;
+    background:#fff;
+    border-radius:24px;
+    padding:42px;
+    border:1px solid #eee;
+    box-shadow:0 20px 60px rgba(0,0,0,.09);
+    position:relative;
+    overflow:hidden;
+}
+
+.rha-card:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:#ff7a00;
+}
+
+.rha-heading{
+    text-align:center;
+    margin-bottom:34px;
+}
+
+.rha-heading h1{
+    margin:0;
+    font-family:'Manrope',sans-serif;
+    font-size:36px;
+    line-height:1.2;
+    font-weight:800;
+    letter-spacing:-1px;
+    color:#ff7a00;
+}
+
+.rha-heading p{
+    margin:10px 0 0;
+    font-size:14px;
+    color:#777;
+    font-weight:500;
+}
+
+.rha-section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:30px 0 18px;
+    padding-bottom:11px;
+    border-bottom:1px solid #eee;
+    font-family:'Manrope',sans-serif;
+    font-size:17px;
+    font-weight:800;
+}
+
+.rha-section-title:before{
+    content:"";
+    width:4px;
+    height:20px;
+    background:#ff7a00;
+    border-radius:10px;
+}
+
+.rha-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.rha-field{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.rha-field.full{
+    grid-column:1/-1;
+}
+
+.rha-field label{
+    font-size:13px;
+    font-weight:700;
+}
+
+.rha-required{
+    color:#ff7a00;
+}
+
+.rha-field input:not([type="file"]),
+.rha-field select,
+.rha-field textarea{
+    width:100%;
+    border:1px solid #dedede;
+    border-radius:12px;
+    padding:14px 15px;
+    font-family:'DM Sans',sans-serif;
+    font-size:14px;
+    color:#222;
+    background:#fafafa;
+    outline:none;
+    transition:.25s;
+}
+
+.rha-field input:not([type="file"]):focus,
+.rha-field select:focus,
+.rha-field textarea:focus{
+    background:#fff;
+    border-color:#ff7a00;
+    box-shadow:0 0 0 4px rgba(255,122,0,.07);
+}
+
+.rha-field textarea{
+    min-height:155px;
+    line-height:1.65;
+    resize:vertical;
+}
+
+/* PAYMENT */
+
+.rha-payment-box{
+    background:linear-gradient(145deg,#fff7f0,#fff);
+    border:1px solid #ffd9b8;
+    border-radius:18px;
+    padding:25px;
+}
+
+.rha-payment-heading{
+    text-align:center;
+    margin-bottom:22px;
+}
+
+.rha-payment-heading h3{
+    margin:0;
+    font-family:'Manrope',sans-serif;
+    font-size:21px;
+    font-weight:800;
+    color:#ff7a00;
+}
+
+.rha-payment-heading p{
+    margin:6px 0 0;
+    color:#777;
+    font-size:13px;
+}
+
+.rha-payment-content{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    gap:28px;
+    align-items:center;
+}
+
+.rha-qr-area{
+    text-align:center;
+}
+
+.rha-qr{
+    width:205px;
+    height:205px;
+    object-fit:contain;
+    padding:8px;
+    background:#fff;
+    border-radius:15px;
+    border:2px solid #ff7a00;
+}
+
+.rha-scan-text{
+    display:block;
+    margin-top:10px;
+    font-size:12px;
+    font-weight:700;
+    color:#ff7a00;
+}
+
+.rha-bank-details{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:15px;
+    padding:20px;
+}
+
+.rha-bank-title{
+    margin-bottom:15px;
+    font-family:'Manrope',sans-serif;
+    font-size:16px;
+    font-weight:800;
+}
+
+.rha-bank-row{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    padding:10px 0;
+    border-bottom:1px solid #f0f0f0;
+}
+
+.rha-bank-row:last-child{
+    border-bottom:none;
+}
+
+.rha-bank-label{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    font-weight:700;
+    color:#999;
+}
+
+.rha-bank-value{
+    font-size:14px;
+    font-weight:700;
+    word-break:break-word;
+}
+
+.rha-account-number{
+    color:#ff7a00;
+    font-size:16px;
+}
+
+.rha-payment-note{
+    margin-top:18px;
+    padding:11px 14px;
+    border-radius:10px;
+    background:#fff0e5;
+    color:#a64b00;
+    font-size:12px;
+    line-height:1.55;
+    text-align:center;
+}
+
+/* FILE UPLOAD */
+
+.rha-file-upload{
+    border:1px dashed #d5d5d5;
+    border-radius:14px;
+    padding:14px;
+    background:#fafafa;
+}
+
+.rha-file-upload input[type="file"]{
+    width:100%;
+    padding:8px 4px;
+    cursor:pointer;
+    border:none;
+    background:transparent;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+}
+
+.rha-file-help{
+    font-size:11px;
+    color:#888;
+}
+
+.rha-upload-status{
+    display:none;
+    margin-top:10px;
+}
+
+.rha-upload-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:7px;
+}
+
+.rha-upload-name{
+    font-size:12px;
+    font-weight:700;
+    color:#333;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.rha-upload-percent{
+    font-size:12px;
+    font-weight:800;
+    color:#ff7a00;
+    flex-shrink:0;
+}
+
+.rha-progress{
+    width:100%;
+    height:7px;
+    background:#eee;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.rha-progress-bar{
+    width:0%;
+    height:100%;
+    background:#ff7a00;
+    border-radius:20px;
+    transition:width .15s ease;
+}
+
+.rha-upload-message{
+    margin-top:7px;
+    font-size:11px;
+    color:#777;
+}
+
+.rha-upload-message.success{
+    color:#198754;
+    font-weight:700;
+}
+
+.rha-upload-message.error{
+    color:#e66e00;
+    font-weight:700;
+}
+
+/* PREVIEW */
+
+.rha-preview{
+    display:none;
+    margin-top:12px;
+    border:1px solid #e5e5e5;
+    border-radius:12px;
+    overflow:hidden;
+    background:#fff;
+}
+
+.rha-preview-image{
+    width:100%;
+    max-height:190px;
+    object-fit:contain;
+    display:block;
+    background:#f7f7f7;
+}
+
+.rha-photo-preview{
+    width:150px;
+    height:190px;
+    margin:0 auto;
+    object-fit:cover;
+    display:block;
+    background:#f7f7f7;
+    border-radius:8px;
+}
+
+.rha-video-help{
+    margin-top:7px;
+    font-size:11px;
+    line-height:1.5;
+    color:#777;
+}
+
+.rha-checkbox-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:8px;
+}
+
+.rha-checkbox-item{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:13px 14px;
+    border:1px solid #e5e5e5;
+    border-radius:12px;
+    background:#fafafa;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.rha-checkbox-item:hover{
+    border-color:#ff7a00;
+    background:#fff;
+}
+
+.rha-checkbox-item input[type="checkbox"]{
+    width:17px;
+    height:17px;
+    margin:1px 0 0;
+    accent-color:#ff7a00;
+    flex-shrink:0;
+    cursor:pointer;
+}
+
+.rha-checkbox-item span{
+    font-size:12px;
+    line-height:1.5;
+    color:#444;
+    font-weight:500;
+}
+
+.rha-preview-file{
+    padding:14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.rha-preview-icon{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    background:#ffe8d6;
+    color:#ff7a00;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:10px;
+    flex-shrink:0;
+}
+
+.rha-preview-info{
+    min-width:0;
+}
+
+.rha-preview-title{
+    font-size:12px;
+    font-weight:700;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.rha-preview-size{
+    margin-top:3px;
+    font-size:10px;
+    color:#888;
+}
+
+/* WORD COUNTER */
+
+.rha-word-counter{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    font-size:11px;
+    color:#777;
+}
+
+.rha-word-counter.error{
+    color:#e66e00;
+}
+
+.rha-word-counter.success{
+    color:#198754;
+}
+
+/* ERROR */
+
+.rha-error{
+    display:none;
+    margin-top:18px;
+    padding:13px 15px;
+    border-radius:11px;
+    background:#fff0e5;
+    border:1px solid #ffd0a8;
+    color:#c65f00;
+    font-size:13px;
+    line-height:1.5;
+}
+
+/* BUTTON */
+
+.rha-submit-wrap{
+    margin-top:30px;
+}
+
+.rha-submit-btn{
+    width:100%;
+    border:none;
+    border-radius:13px;
+    padding:16px 20px;
+    background:#ff7a00;
+    color:#fff;
+    font-family:'Manrope',sans-serif;
+    font-size:15px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.rha-submit-btn:hover{
+    background:#e66e00;
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(255,122,0,.22);
+}
+
+.rha-submit-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* SUCCESS */
+
+.rha-success-screen{
+    display:none;
+    min-height:450px;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    padding:40px 15px;
+}
+
+.rha-success-logo-wrap{
+    position:relative;
+    width:155px;
+    height:155px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:28px;
+}
+
+.rha-success-logo{
+    width:125px;
+    height:125px;
+    object-fit:cover;
+    border-radius:50%;
+    box-shadow:0 10px 35px rgba(0,0,0,.15);
+    animation:rhaLogoBlink .65s ease-in-out 4;
+}
+
+@keyframes rhaLogoBlink{
+    0%,100%{
+        opacity:1;
+        transform:scale(1);
+    }
+    50%{
+        opacity:.08;
+        transform:scale(.94);
+    }
+}
+
+.rha-green-circle{
+    position:absolute;
+    right:-2px;
+    bottom:5px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:#20b26b;
+    border:5px solid #fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transform:scale(0);
+}
+
+.rha-green-circle.show{
+    animation:rhaCheckPop .55s ease forwards;
+}
+
+.rha-green-circle:after{
+    content:"";
+    width:17px;
+    height:9px;
+    border-left:3px solid #fff;
+    border-bottom:3px solid #fff;
+    transform:rotate(-45deg) translate(1px,-1px);
+}
+
+@keyframes rhaCheckPop{
+    0%{
+        opacity:0;
+        transform:scale(0);
+    }
+    65%{
+        opacity:1;
+        transform:scale(1.18);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.rha-success-title{
+    font-family:'Manrope',sans-serif;
+    font-size:28px;
+    font-weight:800;
+    color:#ff7a00;
+    opacity:0;
+    transform:translateY(15px);
+}
+
+.rha-success-title.show{
+    animation:rhaTextUp .55s ease forwards;
+}
+
+@keyframes rhaTextUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.rha-success-subtitle{
+    margin-top:9px;
+    color:#777;
+    font-size:14px;
+    opacity:0;
+}
+
+.rha-success-subtitle.show{
+    animation:rhaFadeIn .6s ease .15s forwards;
+}
+
+.rha-note{
+    margin-top:23px;
+    padding:11px 16px;
+    border-radius:10px;
+    background:#f2fff8;
+    color:#21844d;
+    font-size:12px;
+    opacity:0;
+}
+
+.rha-note.show{
+    animation:rhaFadeIn .6s ease .3s forwards;
+}
+
+@keyframes rhaFadeIn{
+    to{
+        opacity:1;
+    }
+}
+
+
+/* SOCIAL MEDIA */
+.rha-social-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.rha-social-item{
+    display:grid;
+    grid-template-columns:210px 1fr auto;
+    gap:10px;
+    align-items:start;
+    padding:12px;
+    border:1px solid #e5e5e5;
+    border-radius:14px;
+    background:#fafafa;
+}
+
+.rha-social-item .rha-field{
+    gap:7px;
+}
+
+.rha-social-item select,
+.rha-social-item input{
+    width:100%;
+    border:1px solid #dedede;
+    border-radius:10px;
+    padding:12px 13px;
+    font-family:'DM Sans',sans-serif;
+    font-size:14px;
+    color:#222;
+    background:#fff;
+    outline:none;
+    transition:.25s;
+}
+
+.rha-social-item select:focus,
+.rha-social-item input:focus{
+    border-color:#ff7a00;
+    box-shadow:0 0 0 4px rgba(255,122,0,.07);
+}
+
+.rha-social-remove{
+    width:40px;
+    height:40px;
+    margin-top:24px;
+    border:1px solid #ffd0a8;
+    border-radius:10px;
+    background:#fff;
+    color:#e66e00;
+    font-size:20px;
+    line-height:1;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.rha-social-remove:hover{
+    background:#fff0e5;
+    border-color:#ff7a00;
+}
+
+.rha-social-other-name{
+    display:none;
+    grid-column:1 / -1;
+}
+
+.rha-social-add-wrap{
+    margin-top:12px;
+}
+
+.rha-social-add-btn{
+    border:1px dashed #ff7a00;
+    border-radius:11px;
+    padding:11px 16px;
+    background:#fff7f0;
+    color:#ff7a00;
+    font-family:'Manrope',sans-serif;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.rha-social-add-btn:hover{
+    background:#ffe8d6;
+    transform:translateY(-1px);
+}
+
+.rha-social-help{
+    margin-top:7px;
+    font-size:11px;
+    color:#888;
+}
+
+@media(max-width:720px){
+    .rha-social-item{
+        grid-template-columns:1fr auto;
+    }
+
+    .rha-social-item .rha-social-platform{
+        grid-column:1 / -1;
+    }
+
+    .rha-social-item .rha-social-link{
+        grid-column:1 / 2;
+    }
+
+    .rha-social-remove{
+        grid-column:2 / 3;
+        grid-row:2;
+        margin-top:0;
+    }
+
+    .rha-social-other-name{
+        grid-column:1 / -1;
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:720px){
+
+    #rha-registration-wrapper{
+        padding:8px;
+        margin:15px auto;
+    }
+
+    .rha-card{
+        padding:27px 18px;
+        border-radius:18px;
+    }
+
+    .rha-heading h1{
+        font-size:28px;
+    }
+
+    .rha-grid{
+        grid-template-columns:1fr;
+    }
+
+    .rha-field.full{
+        grid-column:auto;
+    }
+
+    .rha-payment-content{
+        grid-template-columns:1fr;
+    }
+
+    .rha-qr{
+        width:185px;
+        height:185px;
+    }
+}
+
+@media(max-width:430px){
+
+    .rha-card{
+        padding:23px 14px;
+    }
+
+    .rha-heading h1{
+        font-size:25px;
+    }
+
+    .rha-payment-box{
+        padding:18px 12px;
+    }
+
+    .rha-qr{
+        width:165px;
+        height:165px;
+    }
+
+    .rha-success-title{
+        font-size:23px;
+    }
+}
+</style>
+
+
+<!-- =========================================
+     EMAILJS LIBRARY
+========================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<div class="rha-card">
+
+<div id="rhaFormContainer">
+
+    <div class="rha-heading">
+
+        <h1>Mr/Miss/Mrs Iconic Creation Of God</h1>
+
+        <p>
+            Please fill in all the required details carefully.
+        </p>
+
+    </div>
+
+
+    <!-- FORM CARRY REMAINS -->
+
+    <form
+        id="rhaRegistrationForm"
+        action="https://formcarry.com/s/nCnCGy8b_DQ"
+        method="POST"
+        enctype="multipart/form-data"
+    >
+
+        <!-- PERSONAL DETAILS -->
+
+        <div class="rha-section-title">
+            Personal Information
+        </div>
+
+
+        <div class="rha-grid">
+
+            <div class="rha-field">
+
+                <label>
+                    Name <span class="rha-required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="name"
+                    id="rhaName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="rha-field">
+
+                <label>
+                    Mobile Number <span class="rha-required">*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    name="mobile"
+                    id="rhaMobile"
+                    placeholder="Enter 10-digit mobile number"
+                    maxlength="10"
+                    inputmode="numeric"
+                    required
+                >
+
+            </div>
+
+
+            <div class="rha-field full">
+
+                <label>
+                    Email ID <span class="rha-required">*</span>
+                </label>
+
+                <input
+                    type="email"
+                    name="email"
+                    id="rhaEmail"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+            </div>
+
+            <div class="rha-field full">
+                <label for="registrationType">
+                    Select Registration Category <span class="rha-required">*</span>
+                </label>
+                <select name="registration_type" id="registrationType" required>
+                    <option value="">Select a category</option>
+                    <option value="Seminar">Seminar</option>
+                    <option value="Award Show">Award Show</option>
+                    <option value="Makeup Competition">Makeup Competition</option>
+                    <option value="VIP Guest">VIP Guest</option>
+                </select>
+                <input type="hidden" name="registration_fee" id="registrationFeeInput" value="">
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO -->
+
+        <div class="rha-section-title">
+            Attach Photograph
+        </div>
+
+        <div class="rha-grid">
+
+            <div class="rha-field full">
+
+                <label>
+                    Photograph <span class="rha-required">*</span>
+                </label>
+
+                <div class="rha-file-upload">
+
+                    <input
+                        type="file"
+                        id="rhaPhoto"
+                        accept=".jpg,.jpeg,.png,.webp"
+                        required
+                    >
+
+                    <div
+                        class="rha-upload-status"
+                        id="photoStatus"
+                    >
+
+                        <div class="rha-upload-top">
+
+                            <span
+                                class="rha-upload-name"
+                                id="photoName"
+                            ></span>
+
+                            <span
+                                class="rha-upload-percent"
+                                id="photoPercent"
+                            >
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="rha-progress">
+
+                            <div
+                                class="rha-progress-bar"
+                                id="photoProgress"
+                            ></div>
+
+                        </div>
+
+                        <div
+                            class="rha-upload-message"
+                            id="photoMessage"
+                        >
+                            Uploading...
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="rha-preview"
+                        id="photoPreview"
+                    ></div>
+
+                </div>
+
+                <span class="rha-file-help">
+                    JPG, JPEG, PNG or WEBP • Photograph recommended
+                </span>
+
+                <input
+                    type="hidden"
+                    name="photo_url"
+                    id="photoUrl"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- ATTACHMENTS -->
+
+        <div class="rha-section-title">
+            Attachments
+        </div>
+
+
+        <div class="rha-grid">
+
+            <!-- PORTFOLIO -->
+
+            <div class="rha-field">
+
+                <label>
+                    Attach Profile
+                    <span class="rha-required">*</span>
+                </label>
+
+                <div class="rha-file-upload">
+
+                    <input
+                        type="file"
+                        id="rhaPortfolio"
+                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp"
+                        required
+                    >
+
+                    <div
+                        class="rha-upload-status"
+                        id="portfolioStatus"
+                    >
+
+                        <div class="rha-upload-top">
+
+                            <span
+                                class="rha-upload-name"
+                                id="portfolioName"
+                            ></span>
+
+                            <span
+                                class="rha-upload-percent"
+                                id="portfolioPercent"
+                            >
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="rha-progress">
+
+                            <div
+                                class="rha-progress-bar"
+                                id="portfolioProgress"
+                            ></div>
+
+                        </div>
+
+                        <div
+                            class="rha-upload-message"
+                            id="portfolioMessage"
+                        >
+                            Uploading...
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="rha-preview"
+                        id="portfolioPreview"
+                    ></div>
+
+                </div>
+
+                <span class="rha-file-help">
+                    PDF, DOC, DOCX, JPG, PNG or WEBP
+                </span>
+
+                <input
+                    type="hidden"
+                    name="portfolio_url"
+                    id="portfolioUrl"
+                >
+
+            </div>
+
+
+            <!-- ID PROOF -->
+
+            <div class="rha-field">
+
+                <label>
+                    Attach ID Proof
+                    <span class="rha-required">*</span>
+                </label>
+
+                <div class="rha-file-upload">
+
+                    <input
+                        type="file"
+                        id="rhaIdProof"
+                        accept=".pdf,.jpg,.jpeg,.png,.webp"
+                        required
+                    >
+
+                    <div
+                        class="rha-upload-status"
+                        id="idProofStatus"
+                    >
+
+                        <div class="rha-upload-top">
+
+                            <span
+                                class="rha-upload-name"
+                                id="idProofName"
+                            ></span>
+
+                            <span
+                                class="rha-upload-percent"
+                                id="idProofPercent"
+                            >
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="rha-progress">
+
+                            <div
+                                class="rha-progress-bar"
+                                id="idProofProgress"
+                            ></div>
+
+                        </div>
+
+                        <div
+                            class="rha-upload-message"
+                            id="idProofMessage"
+                        >
+                            Uploading...
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="rha-preview"
+                        id="idProofPreview"
+                    ></div>
+
+                </div>
+
+                <span class="rha-file-help">
+                    PDF, JPG, PNG or WEBP
+                </span>
+
+                <input
+                    type="hidden"
+                    name="id_proof_url"
+                    id="idProofUrl"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- NOMINATION FEES -->
+
+        <div class="rha-section-title">
+            Registration Fees
+        </div>
+
+
+        <div class="rha-payment-box">
+
+            <div class="rha-payment-heading">
+
+                <h3 id="registrationFeeHeading">
+                    Select a category to view Registration Fees
+                </h3>
+
+                <p>
+                    Pay the registration fee for your selected category using the QR code or bank account details below.
+                </p>
+
+            </div>
+
+
+            <div class="rha-payment-content">
+
+                <div class="rha-qr-area">
+
+                    <img
+                        src="https://jantalive.in/wp-content/uploads/2026/10/Screenshot_14-10-2026_204735_moviq.in_.jpeg"
+                        alt="Registration Fees UPI QR Code"
+                        class="rha-qr"
+                        id="registrationQr"
+                    >
+
+                    <span class="rha-scan-text">
+                        Scan QR Code to Pay
+                    </span>
+
+                </div>
+
+
+                <div class="rha-bank-details">
+
+                    <div class="rha-bank-title">
+                        Bank Account Details
+                    </div>
+
+                    <div class="rha-bank-row">
+
+                        <span class="rha-bank-label">
+                            Bank Name
+                        </span>
+
+                        <span class="rha-bank-value">
+                            Bank of Baroda
+                        </span>
+
+                    </div>
+
+                    <div class="rha-bank-row">
+
+                        <span class="rha-bank-label">
+                            Branch
+                        </span>
+
+                        <span class="rha-bank-value">
+                            Parliament-New Delhi
+                        </span>
+
+                    </div>
+
+                    <div class="rha-bank-row">
+
+                        <span class="rha-bank-label">
+                            Account Number
+                        </span>
+
+                        <span class="rha-bank-value rha-account-number">
+                            05860200001973
+                        </span>
+
+                    </div>
+
+                    <div class="rha-bank-row">
+
+                        <span class="rha-bank-label">
+                            IFSC Code
+                        </span>
+
+                        <span class="rha-bank-value">
+                            BARB0PARLIA
+                        </span>
+
+                    </div>
+
+                    <div class="rha-bank-row">
+
+                        <span class="rha-bank-label">
+                            Account Holder Name
+                        </span>
+
+                        <span class="rha-bank-value">
+                            Janta Live Press Network Private Limited
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="rha-payment-note">
+
+                <strong>Important:</strong>
+                After completing the payment, please upload your registration fees screenshot below.
+
+            </div>
+
+        </div>
+
+
+        <!-- NOMINATION FEE SCREENSHOT -->
+
+        <div class="rha-section-title">
+            Registration Fees Screenshot
+        </div>
+
+
+        <div class="rha-grid">
+
+            <div class="rha-field full">
+
+                <label>
+                    Attach Registration Fees Screenshot
+                    <span class="rha-required">*</span>
+                </label>
+
+                <div class="rha-file-upload">
+
+                    <input
+                        type="file"
+                        id="rhaPayment"
+                        accept=".jpg,.jpeg,.png,.webp,.pdf"
+                        required
+                    >
+
+                    <div
+                        class="rha-upload-status"
+                        id="paymentStatus"
+                    >
+
+                        <div class="rha-upload-top">
+
+                            <span
+                                class="rha-upload-name"
+                                id="paymentName"
+                            ></span>
+
+                            <span
+                                class="rha-upload-percent"
+                                id="paymentPercent"
+                            >
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="rha-progress">
+
+                            <div
+                                class="rha-progress-bar"
+                                id="paymentProgress"
+                            ></div>
+
+                        </div>
+
+                        <div
+                            class="rha-upload-message"
+                            id="paymentMessage"
+                        >
+                            Uploading...
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="rha-preview"
+                        id="paymentPreview"
+                    ></div>
+
+                </div>
+
+                <span class="rha-file-help">
+                    JPG, PNG, WEBP or PDF
+                </span>
+
+                <input
+                    type="hidden"
+                    name="nomination_fees_screenshot_url"
+                    id="paymentUrl"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- ABOUT YOURSELF -->
+
+        <div class="rha-section-title">
+            About Yourself
+        </div>
+
+
+        <div class="rha-grid">
+
+            <div class="rha-field full">
+
+                <label>
+                    About Yourself
+                    <span class="rha-required">*</span>
+                </label>
+
+                <textarea
+                    id="rhaAbout"
+                    name="about_yourself"
+                    placeholder="Tell us about yourself in at least 100 words..."
+                    required
+                ></textarea>
+
+                <div
+                    class="rha-word-counter error"
+                    id="rhaWordCounter"
+                >
+
+                    <span>
+                        Minimum 100 words required
+                    </span>
+
+                    <span id="rhaWordCount">
+                        0 / 100 words
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SOCIAL MEDIA LINKS -->
+
+        <div class="rha-section-title">
+            Social Media Links
+        </div>
+
+        <div class="rha-grid">
+
+            <div class="rha-field full">
+
+                <div class="rha-social-list" id="rhaSocialList">
+                    <!-- Social media rows are added here -->
+                </div>
+
+                <div class="rha-social-add-wrap">
+                    <button
+                        type="button"
+                        class="rha-social-add-btn"
+                        id="rhaAddSocialBtn"
+                    >
+                        + Add Social Media Link
+                    </button>
+                </div>
+
+                <div class="rha-social-help">
+                    This section is optional. You can add one or more social media profiles.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO OF WORK -->
+
+        <div class="rha-section-title">
+            Upload Video of Work
+        </div>
+
+        <div class="rha-grid">
+
+            <div class="rha-field full">
+
+                <label>
+                    Video Link <span class="rha-optional">(Optional)</span>
+                </label>
+
+                <input
+                    type="url"
+                    name="video_link"
+                    id="rhaVideoLink"
+                    placeholder="Optional: Paste your Google Drive, YouTube, Vimeo or other video link"
+                >
+
+                <div class="rha-video-help">
+                    If you provide a video link, make sure it is accessible to our team. For Google Drive, set the access to
+                    <strong>Anyone with the link can view</strong>.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DECLARATIONS -->
+
+        <div class="rha-section-title">
+            Confirmation & Declaration
+        </div>
+
+        <div class="rha-grid">
+
+            <div class="rha-field full">
+
+                <div class="rha-checkbox-group">
+
+                    <label class="rha-checkbox-item">
+                        <input
+                            type="checkbox"
+                            name="information_confirmation"
+                            id="informationConfirmation"
+                            value="I confirm that all the information provided in this registration form is true and correct."
+                            required
+                        >
+                        <span>
+                            I confirm that all the information provided in this registration form is true and correct to the best of my knowledge.
+                        </span>
+                    </label>
+
+                    <label class="rha-checkbox-item">
+                        <input
+                            type="checkbox"
+                            name="video_access_confirmation"
+                            id="videoAccessConfirmation"
+                            value="If provided, I confirm that the submitted video link is accessible and can be viewed by the event team."
+                        >
+                        <span>
+                            If I have provided a video link, I confirm that it is accessible and has the required viewing permission for the event team.
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="rhaError"
+            class="rha-error"
+        ></div>
+
+
+        <div class="rha-submit-wrap">
+
+            <button
+                type="submit"
+                class="rha-submit-btn"
+                id="rhaSubmitBtn"
+            >
+                Submit Registration
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+<!-- SUCCESS SCREEN -->
+
+<div
+    class="rha-success-screen"
+    id="rhaSuccessScreen"
+>
+
+    <div class="rha-success-logo-wrap">
+
+        <img
+            src="https://jantalive.in/wp-content/uploads/2026/07/channels4_profile-1.jpg"
+            class="rha-success-logo"
+            alt="Janta Live"
+        >
+
+        <div
+            class="rha-green-circle"
+            id="rhaGreenCircle"
+        ></div>
+
+    </div>
+
+
+    <div
+        class="rha-success-title"
+        id="rhaSuccessTitle"
+    >
+        Your Registration Form Submitted Successfully
+    </div>
+
+
+    <div
+        class="rha-success-subtitle"
+        id="rhaSuccessSubtitle"
+    >
+        Our team will reach you shortly.
+    </div>
+
+
+    <div
+        class="rha-note"
+        id="rhaSuccessNote"
+    >
+        Thank you for submitting your registration.
+    </div>
+
+</div>
+
+</div>
+
+
+<script>
+
+(function(){
+
+    /* ==========================================
+       EMAILJS CONFIGURATION
+    ========================================== */
+
+    const EMAILJS_PUBLIC_KEY = "EumEBVWl0H9x_zmxs";
+
+    const EMAILJS_SERVICE_ID = "service_vp0w4j6";
+
+    const EMAILJS_TEMPLATE_ID = "template_p9t0mfl";
+
+
+    /* ==========================================
+       INITIALIZE EMAILJS
+    ========================================== */
+
+    if(
+        typeof emailjs !== "undefined"
+    ){
+
+        emailjs.init({
+            publicKey: EMAILJS_PUBLIC_KEY
+        });
+
+    }
+
+
+    /* ==========================================
+       CLOUDINARY CONFIG
+    ========================================== */
+
+    const CLOUD_NAME = "o89vqxup";
+
+    const UPLOAD_PRESET = "rha registration 2026";
+
+    const UPLOAD_FOLDER = "rha registration 2026";
+
+
+    /* ==========================================
+       ELEMENTS
+    ========================================== */
+
+    const form =
+        document.getElementById(
+            "rhaRegistrationForm"
+        );
+
+    /* ==========================================
+       FORMCARRY CONFIGURATION
+       ========================================== */
+
+    const FORMCARRY_ENDPOINT = "https://formcarry.com/s/nCnCGy8b_DQ";
+    form.setAttribute("action", FORMCARRY_ENDPOINT);
+
+    const about =
+        document.getElementById(
+            "rhaAbout"
+        );
+
+    const mobile =
+        document.getElementById(
+            "rhaMobile"
+        );
+
+    const submitBtn =
+        document.getElementById(
+            "rhaSubmitBtn"
+        );
+
+    /* REGISTRATION CATEGORY, FEE AND QR CODE */
+    const registrationType = document.getElementById("registrationType");
+    const registrationFeeInput = document.getElementById("registrationFeeInput");
+    const registrationFeeHeading = document.getElementById("registrationFeeHeading");
+    const registrationQr = document.getElementById("registrationQr");
+
+    const registrationOptions = {
+        "Seminar": {
+            fee: 1500,
+            qr: "https://jantalive.in/wp-content/uploads/2026/10/Screenshot_14-10-2026_204735_moviq.in_.jpeg"
+        },
+        "Award Show": {
+            fee: 3000,
+            qr: "https://jantalive.in/wp-content/uploads/2026/10/Screenshot_14-10-2026_204929_moviq.in_.jpeg"
+        },
+        "Makeup Competition": {
+            fee: 3500,
+            qr: "https://jantalive.in/wp-content/uploads/2026/10/Screenshot_14-10-2026_205842_moviq.in_.jpeg"
+        },
+        "VIP Guest": {
+            fee: 5000,
+            qr: "https://jantalive.in/wp-content/uploads/2026/10/Screenshot_14-10-2026_205625_moviq.in_.jpeg"
+        }
+    };
+
+    function updateRegistrationFee() {
+        const selected = registrationOptions[registrationType.value];
+
+        if (!selected) {
+            registrationFeeHeading.textContent = "Select a category to view Registration Fees";
+            registrationQr.removeAttribute("src");
+            registrationFeeInput.value = "";
+            return;
+        }
+
+        registrationFeeHeading.textContent =
+            "Registration Fee: ₹" + selected.fee.toLocaleString("en-IN");
+        registrationQr.src = selected.qr;
+        registrationQr.alt = "UPI QR Code for " + registrationType.value + " registration fee of ₹" + selected.fee;
+        registrationFeeInput.value = String(selected.fee);
+    }
+
+    registrationType.addEventListener("change", updateRegistrationFee);
+    updateRegistrationFee();
+
+    const errorBox =
+        document.getElementById(
+            "rhaError"
+        );
+
+    const formContainer =
+        document.getElementById(
+            "rhaFormContainer"
+        );
+
+    const successScreen =
+        document.getElementById(
+            "rhaSuccessScreen"
+        );
+
+    const greenCircle =
+        document.getElementById(
+            "rhaGreenCircle"
+        );
+
+    const successTitle =
+        document.getElementById(
+            "rhaSuccessTitle"
+        );
+
+    const successSubtitle =
+        document.getElementById(
+            "rhaSuccessSubtitle"
+        );
+
+    const successNote =
+        document.getElementById(
+            "rhaSuccessNote"
+        );
+
+
+    /* ==========================================
+       FILE CONFIG
+    ========================================== */
+
+    const fileConfigs = {
+
+        portfolio:{
+            input:"rhaPortfolio",
+            status:"portfolioStatus",
+            name:"portfolioName",
+            percent:"portfolioPercent",
+            progress:"portfolioProgress",
+            message:"portfolioMessage",
+            preview:"portfolioPreview",
+            hidden:"portfolioUrl"
+        },
+
+        idProof:{
+            input:"rhaIdProof",
+            status:"idProofStatus",
+            name:"idProofName",
+            percent:"idProofPercent",
+            progress:"idProofProgress",
+            message:"idProofMessage",
+            preview:"idProofPreview",
+            hidden:"idProofUrl"
+        },
+
+        payment:{
+            input:"rhaPayment",
+            status:"paymentStatus",
+            name:"paymentName",
+            percent:"paymentPercent",
+            progress:"paymentProgress",
+            message:"paymentMessage",
+            preview:"paymentPreview",
+            hidden:"paymentUrl"
+        },
+
+        photo:{
+            input:"rhaPhoto",
+            status:"photoStatus",
+            name:"photoName",
+            percent:"photoPercent",
+            progress:"photoProgress",
+            message:"photoMessage",
+            preview:"photoPreview",
+            hidden:"photoUrl"
+        }
+
+    };
+
+
+    /* ==========================================
+       MOBILE NUMBER
+    ========================================== */
+
+    mobile.addEventListener(
+        "input",
+        function(){
+
+            this.value =
+                this.value
+                .replace(/\D/g,"")
+                .slice(0,10);
+
+        }
+    );
+
+
+    /* ==========================================
+       WORD COUNT
+    ========================================== */
+
+    function countWords(text){
+
+        if(!text.trim()){
+            return 0;
+        }
+
+        return text
+            .trim()
+            .split(/\s+/)
+            .filter(Boolean)
+            .length;
+
+    }
+
+
+    about.addEventListener(
+        "input",
+        function(){
+
+            const count =
+                countWords(this.value);
+
+            document.getElementById(
+                "rhaWordCount"
+            ).textContent =
+                count + " / 100 words";
+
+
+            const counter =
+                document.getElementById(
+                    "rhaWordCounter"
+                );
+
+
+            if(count >= 100){
+
+                counter.classList.remove(
+                    "error"
+                );
+
+                counter.classList.add(
+                    "success"
+                );
+
+                counter.children[0].textContent =
+                    "100 words requirement completed";
+
+            }else{
+
+                counter.classList.remove(
+                    "success"
+                );
+
+                counter.classList.add(
+                    "error"
+                );
+
+                counter.children[0].textContent =
+                    "Minimum 100 words required";
+
+            }
+
+        }
+    );
+
+
+
+    /* ==========================================
+       SOCIAL MEDIA LINKS
+       OPTIONAL / DYNAMIC
+    ========================================== */
+
+    const socialList =
+        document.getElementById("rhaSocialList");
+
+    const addSocialBtn =
+        document.getElementById("rhaAddSocialBtn");
+
+    const socialPlatforms = [
+        "Instagram",
+        "Facebook",
+        "YouTube",
+        "LinkedIn",
+        "X (Twitter)",
+        "Threads",
+        "Snapchat",
+        "Telegram",
+        "WhatsApp",
+        "Pinterest",
+        "Others"
+    ];
+
+    let socialRowCount = 0;
+
+    function createSocialPlatformOptions(){
+        return socialPlatforms.map(function(platform){
+            return '<option value="' +
+                platform.replace(/"/g,'&quot;') +
+                '">' +
+                platform +
+                '</option>';
+        }).join("");
+    }
+
+    function updateSocialOtherField(row){
+        const platformSelect =
+            row.querySelector(".rha-social-platform");
+
+        const otherNameField =
+            row.querySelector(".rha-social-other-name");
+
+        const otherNameInput =
+            row.querySelector(".rha-social-other-name-input");
+
+        if(platformSelect.value === "Others"){
+            otherNameField.style.display = "block";
+            otherNameInput.required = true;
+        }else{
+            otherNameField.style.display = "none";
+            otherNameInput.required = false;
+            otherNameInput.value = "";
+        }
+    }
+
+    function createSocialRow(){
+        socialRowCount++;
+
+        const row =
+            document.createElement("div");
+
+        row.className = "rha-social-item";
+
+        row.innerHTML = `
+            <div class="rha-field rha-social-platform-field">
+                <label>Social Media</label>
+                <select
+                    name="social_media_platform_${socialRowCount}"
+                    class="rha-social-platform"
+                >
+                    ${createSocialPlatformOptions()}
+                </select>
+            </div>
+
+            <div class="rha-field rha-social-link">
+                <label>Profile Link</label>
+                <input
+                    type="url"
+                    name="social_media_link_${socialRowCount}"
+                    class="rha-social-link-input"
+                    placeholder="https://..."
+                >
+            </div>
+
+            <button
+                type="button"
+                class="rha-social-remove"
+                title="Remove this social media"
+                aria-label="Remove this social media"
+            >
+                ×
+            </button>
+
+            <div class="rha-field rha-social-other-name">
+                <label>
+                    Social Media Name
+                    <span class="rha-required">*</span>
+                </label>
+                <input
+                    type="text"
+                    name="social_media_name_${socialRowCount}"
+                    class="rha-social-other-name-input"
+                    placeholder="Enter social media name"
+                >
+            </div>
+        `;
+
+        socialList.appendChild(row);
+
+        const platformSelect =
+            row.querySelector(".rha-social-platform");
+
+        const removeButton =
+            row.querySelector(".rha-social-remove");
+
+        platformSelect.addEventListener(
+            "change",
+            function(){
+                updateSocialOtherField(row);
+            }
+        );
+
+        removeButton.addEventListener(
+            "click",
+            function(){
+                row.remove();
+            }
+        );
+
+        updateSocialOtherField(row);
+    }
+
+    addSocialBtn.addEventListener(
+        "click",
+        function(){
+            createSocialRow();
+        }
+    );
+
+    /* ==========================================
+       ERROR
+    ========================================== */
+
+    function showError(message){
+
+        errorBox.textContent =
+            message;
+
+        errorBox.style.display =
+            "block";
+
+        errorBox.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    }
+
+
+    function hideError(){
+
+        errorBox.style.display =
+            "none";
+
+    }
+
+
+    /* ==========================================
+       FILE SIZE
+    ========================================== */
+
+    function formatSize(bytes){
+
+        if(bytes < 1024){
+
+            return bytes + " B";
+
+        }
+
+        if(bytes < 1024 * 1024){
+
+            return (
+                (bytes / 1024).toFixed(1)
+                + " KB"
+            );
+
+        }
+
+        return (
+            (bytes / (1024 * 1024)).toFixed(1)
+            + " MB"
+        );
+
+    }
+
+
+    /* ==========================================
+       PREVIEW
+    ========================================== */
+
+    function showPreview(
+        file,
+        element
+    ){
+
+        element.innerHTML = "";
+
+        element.style.display =
+            "block";
+
+
+        if(
+            file.type.startsWith("image/")
+        ){
+
+            const img =
+                document.createElement(
+                    "img"
+                );
+
+            img.className =
+                element.id === "photoPreview"
+                    ? "rha-preview-image rha-photo-preview"
+                    : "rha-preview-image";
+
+            img.src =
+                URL.createObjectURL(
+                    file
+                );
+
+            element.appendChild(
+                img
+            );
+
+            return;
+
+        }
+
+
+        const wrapper =
+            document.createElement(
+                "div"
+            );
+
+        wrapper.className =
+            "rha-preview-file";
+
+
+        const icon =
+            document.createElement(
+                "div"
+            );
+
+        icon.className =
+            "rha-preview-icon";
+
+        icon.textContent =
+            file.name
+            .split(".")
+            .pop()
+            .toUpperCase();
+
+
+        const info =
+            document.createElement(
+                "div"
+            );
+
+        info.className =
+            "rha-preview-info";
+
+
+        const title =
+            document.createElement(
+                "div"
+            );
+
+        title.className =
+            "rha-preview-title";
+
+        title.textContent =
+            file.name;
+
+
+        const size =
+            document.createElement(
+                "div"
+            );
+
+        size.className =
+            "rha-preview-size";
+
+        size.textContent =
+            formatSize(
+                file.size
+            );
+
+
+        info.appendChild(title);
+
+        info.appendChild(size);
+
+        wrapper.appendChild(icon);
+
+        wrapper.appendChild(info);
+
+        element.appendChild(wrapper);
+
+    }
+
+
+    /* ==========================================
+       CLOUDINARY UPLOAD
+    ========================================== */
+
+    function uploadFile(
+        file,
+        config
+    ){
+
+        return new Promise(
+            function(resolve,reject){
+
+                const status =
+                    document.getElementById(
+                        config.status
+                    );
+
+                const name =
+                    document.getElementById(
+                        config.name
+                    );
+
+                const percent =
+                    document.getElementById(
+                        config.percent
+                    );
+
+                const progress =
+                    document.getElementById(
+                        config.progress
+                    );
+
+                const message =
+                    document.getElementById(
+                        config.message
+                    );
+
+                const preview =
+                    document.getElementById(
+                        config.preview
+                    );
+
+
+                status.style.display =
+                    "block";
+
+                name.textContent =
+                    file.name;
+
+                percent.textContent =
+                    "0%";
+
+                progress.style.width =
+                    "0%";
+
+                message.textContent =
+                    "Uploading...";
+
+                message.className =
+                    "rha-upload-message";
+
+
+                showPreview(
+                    file,
+                    preview
+                );
+
+
+                /* 10 MB LIMIT */
+
+                if(
+                    file.size >
+                    10 * 1024 * 1024
+                ){
+
+                    message.textContent =
+                        "File must be smaller than 10 MB.";
+
+                    message.classList.add(
+                        "error"
+                    );
+
+                    reject(
+                        new Error(
+                            file.name +
+                            " is larger than 10 MB."
+                        )
+                    );
+
+                    return;
+
+                }
+
+
+                /* ALLOWED FILE TYPES */
+
+                const allowedTypes = [
+
+                    "image/jpeg",
+
+                    "image/png",
+
+                    "image/webp",
+
+                    "application/pdf",
+
+                    "application/msword",
+
+                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+                ];
+
+
+                if(
+                    !allowedTypes.includes(
+                        file.type
+                    )
+                ){
+
+                    message.textContent =
+                        "This file type is not supported.";
+
+                    message.classList.add(
+                        "error"
+                    );
+
+                    reject(
+                        new Error(
+                            "Unsupported file type."
+                        )
+                    );
+
+                    return;
+
+                }
+
+
+                const data =
+                    new FormData();
+
+
+                data.append(
+                    "file",
+                    file
+                );
+
+
+                data.append(
+                    "upload_preset",
+                    UPLOAD_PRESET
+                );
+
+
+                data.append(
+                    "folder",
+                    UPLOAD_FOLDER
+                );
+
+
+                const xhr =
+                    new XMLHttpRequest();
+
+
+                xhr.open(
+                    "POST",
+                    "https://api.cloudinary.com/v1_1/" +
+                    CLOUD_NAME +
+                    "/auto/upload",
+                    true
+                );
+
+
+                xhr.upload.onprogress =
+                    function(event){
+
+                        if(
+                            !event.lengthComputable
+                        ){
+
+                            return;
+
+                        }
+
+
+                        const value =
+                            Math.round(
+                                (
+                                    event.loaded /
+                                    event.total
+                                ) * 100
+                            );
+
+
+                        percent.textContent =
+                            value + "%";
+
+
+                        progress.style.width =
+                            value + "%";
+
+                    };
+
+
+                xhr.onload =
+                    function(){
+
+                        if(
+                            xhr.status >= 200 &&
+                            xhr.status < 300
+                        ){
+
+                            try{
+
+                                const response =
+                                    JSON.parse(
+                                        xhr.responseText
+                                    );
+
+
+                                if(
+                                    !response.secure_url
+                                ){
+
+                                    throw new Error(
+                                        "Upload URL not received."
+                                    );
+
+                                }
+
+
+                                document.getElementById(
+                                    config.hidden
+                                ).value =
+                                    response.secure_url;
+
+
+                                percent.textContent =
+                                    "100%";
+
+
+                                progress.style.width =
+                                    "100%";
+
+
+                                message.textContent =
+                                    "Upload completed successfully.";
+
+
+                                message.classList.add(
+                                    "success"
+                                );
+
+
+                                resolve(
+                                    response.secure_url
+                                );
+
+
+                            }catch(error){
+
+                                message.textContent =
+                                    "Upload failed.";
+
+                                message.classList.add(
+                                    "error"
+                                );
+
+                                reject(error);
+
+                            }
+
+                        }else{
+
+                            let errorMessage =
+                                "Upload failed.";
+
+
+                            try{
+
+                                const response =
+                                    JSON.parse(
+                                        xhr.responseText
+                                    );
+
+
+                                if(
+                                    response.error &&
+                                    response.error.message
+                                ){
+
+                                    errorMessage =
+                                        response.error.message;
+
+                                }
+
+                            }catch(e){}
+
+
+                            message.textContent =
+                                errorMessage;
+
+                            message.classList.add(
+                                "error"
+                            );
+
+
+                            reject(
+                                new Error(
+                                    errorMessage
+                                )
+                            );
+
+                        }
+
+                    };
+
+
+                xhr.onerror =
+                    function(){
+
+                        message.textContent =
+                            "Network error. Please try again.";
+
+                        message.classList.add(
+                            "error"
+                        );
+
+
+                        reject(
+                            new Error(
+                                "Network error"
+                            )
+                        );
+
+                    };
+
+
+                xhr.send(data);
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       FILE INPUTS
+    ========================================== */
+
+    document.getElementById(
+        "rhaPortfolio"
+    ).addEventListener(
+        "change",
+        function(){
+
+            if(this.files[0]){
+
+                uploadFile(
+                    this.files[0],
+                    fileConfigs.portfolio
+                ).catch(function(){});
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "rhaIdProof"
+    ).addEventListener(
+        "change",
+        function(){
+
+            if(this.files[0]){
+
+                uploadFile(
+                    this.files[0],
+                    fileConfigs.idProof
+                ).catch(function(){});
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "rhaPayment"
+    ).addEventListener(
+        "change",
+        function(){
+
+            if(this.files[0]){
+
+                uploadFile(
+                    this.files[0],
+                    fileConfigs.payment
+                ).catch(function(){});
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "rhaPhoto"
+    ).addEventListener(
+        "change",
+        function(){
+
+            if(this.files[0]){
+
+                uploadFile(
+                    this.files[0],
+                    fileConfigs.photo
+                ).catch(function(){});
+
+            }
+
+        }
+    );
+
+
+    /* ==========================================
+       SUBMIT
+       FORM CARRY + EMAILJS
+    ========================================== */
+
+    form.addEventListener(
+        "submit",
+        async function(event){
+
+            event.preventDefault();
+
+            hideError();
+
+
+            /* REQUIRED FIELD VALIDATION */
+
+            if(!form.checkValidity()){
+
+                form.reportValidity();
+
+                return;
+
+            }
+
+
+            /* MOBILE VALIDATION */
+
+            if(
+                !/^[6-9]\d{9}$/.test(
+                    mobile.value.trim()
+                )
+            ){
+
+                showError(
+                    "Please enter a valid 10-digit Indian mobile number."
+                );
+
+                mobile.focus();
+
+                return;
+
+            }
+
+
+            /* WORD VALIDATION */
+
+            if(
+                countWords(
+                    about.value
+                ) < 100
+            ){
+
+                showError(
+                    "About Yourself must contain at least 100 words."
+                );
+
+                about.focus();
+
+                return;
+
+            }
+
+
+            /* UPLOAD URL CHECK */
+
+            const portfolioUrl =
+                document.getElementById(
+                    "portfolioUrl"
+                ).value;
+
+            const idProofUrl =
+                document.getElementById(
+                    "idProofUrl"
+                ).value;
+
+            const paymentUrl =
+                document.getElementById(
+                    "paymentUrl"
+                ).value;
+
+            const photoUrl =
+                document.getElementById(
+                    "photoUrl"
+                ).value;
+
+
+            if(!portfolioUrl){
+
+                showError(
+                    "Please wait for the Portfolio upload to complete."
+                );
+
+                return;
+
+            }
+
+
+            if(!idProofUrl){
+
+                showError(
+                    "Please wait for the ID Proof upload to complete."
+                );
+
+                return;
+
+            }
+
+
+            if(!paymentUrl){
+
+                showError(
+                    "Please wait for the Registration Fees Screenshot upload to complete."
+                );
+
+                return;
+
+            }
+
+            if(!photoUrl){
+
+                showError(
+                    "Please wait for the Photograph upload to complete."
+                );
+
+                return;
+
+            }
+
+
+            /* DISABLE BUTTON */
+
+            submitBtn.disabled =
+                true;
+
+            submitBtn.textContent =
+                "Submitting Registration...";
+
+
+            /* ======================================
+               FORM DATA FOR FORMCARRY
+            ====================================== */
+
+            const formData =
+                new FormData(form);
+
+
+            try{
+
+                /* ==================================
+                   STEP 1
+                   SUBMIT TO FORMCARRY
+                ================================== */
+
+                const response =
+                    await fetch(
+                        FORMCARRY_ENDPOINT,
+                        {
+                            method:"POST",
+
+                            body:formData,
+
+                            headers:{
+                                "Accept":
+                                    "application/json"
+                            }
+                        }
+                    );
+
+
+                if(!response.ok){
+
+                    let formcarryError = "Formcarry submission failed.";
+
+                    try{
+                        const fcResult = await response.json();
+                        if(fcResult && (fcResult.message || fcResult.error)){
+                            formcarryError = fcResult.message || fcResult.error;
+                        }
+                    }catch(e){}
+
+                    throw new Error(formcarryError);
+
+                }
+
+
+                /* ==================================
+                   STEP 2
+                   EMAILJS SEND EMAIL
+                ================================== */
+
+                const email =
+                    document.getElementById(
+                        "rhaEmail"
+                    ).value.trim();
+
+
+                const name =
+                    document.getElementById(
+                        "rhaName"
+                    ).value.trim();
+
+
+                const mobileNumber =
+                    document.getElementById(
+                        "rhaMobile"
+                    ).value.trim();
+
+
+                /*
+                 * IMPORTANT:
+                 *
+                 * These variable names should match
+                 * your EmailJS template variables.
+                 */
+
+                const emailParams = {
+
+                    to_email: email,
+
+                    email: email,
+
+                    name: name,
+
+                    mobile: mobileNumber,
+
+                    registration_type:
+                        registrationType.value,
+
+                    registration_fee:
+                        registrationFeeInput.value,
+
+                    photo_url:
+                        photoUrl,
+
+                    video_link:
+                        document.getElementById("rhaVideoLink").value.trim(),
+
+                    information_confirmation:
+                        document.getElementById("informationConfirmation").checked
+                            ? "Confirmed"
+                            : "Not confirmed",
+
+                    video_access_confirmation:
+                        document.getElementById("videoAccessConfirmation").checked
+                            ? "Confirmed"
+                            : "Not confirmed",
+
+                    portfolio_url:
+                        portfolioUrl,
+
+                    id_proof_url:
+                        idProofUrl,
+
+                    nomination_fees_screenshot_url:
+                        paymentUrl,
+
+                    about_yourself:
+                        about.value,
+
+                    social_media_links:
+                        (function(){
+                            const rows = document.querySelectorAll(".rha-social-item");
+
+                            return Array.from(rows).map(function(row){
+                                const platform =
+                                    row.querySelector(".rha-social-platform").value;
+
+                                const link =
+                                    row.querySelector(".rha-social-link-input").value.trim();
+
+                                const otherNameInput =
+                                    row.querySelector(".rha-social-other-name-input");
+
+                                const otherName =
+                                    otherNameInput
+                                        ? otherNameInput.value.trim()
+                                        : "";
+
+                                if(platform === "Others"){
+                                    return otherName + ": " + link;
+                                }
+
+                                return platform + ": " + link;
+                            }).filter(Boolean).join("\n");
+                        })(),
+
+                    submission_date:
+                        new Date().toLocaleString(
+                            "en-IN",
+                            {
+                                timeZone:
+                                    "Asia/Kolkata"
+                            }
+                        )
+
+                };
+
+
+                try{
+
+                    await emailjs.send(
+                        EMAILJS_SERVICE_ID,
+                        EMAILJS_TEMPLATE_ID,
+                        emailParams
+                    );
+
+
+                    console.log(
+                        "EmailJS confirmation email sent successfully."
+                    );
+
+
+                }catch(emailError){
+
+                    /*
+                     * IMPORTANT:
+                     *
+                     * EmailJS failure should NOT
+                     * cancel the successful Formcarry
+                     * submission.
+                     */
+
+                    console.error(
+                        "EmailJS Error:",
+                        emailError
+                    );
+
+                }
+
+
+                /* ==================================
+                   SUCCESS SCREEN
+                ================================== */
+
+                formContainer.style.display =
+                    "none";
+
+
+                successScreen.style.display =
+                    "flex";
+
+
+                /* LOGO ANIMATION */
+
+                const logo =
+                    document.querySelector(
+                        ".rha-success-logo"
+                    );
+
+
+                logo.style.animation =
+                    "none";
+
+
+                void logo.offsetWidth;
+
+
+                logo.style.animation =
+                    "rhaLogoBlink .65s ease-in-out 4";
+
+
+                /* GREEN CHECK */
+
+                setTimeout(
+                    function(){
+
+                        greenCircle.classList.add(
+                            "show"
+                        );
+
+                    },
+                    2700
+                );
+
+
+                /* SUCCESS TEXT */
+
+                setTimeout(
+                    function(){
+
+                        successTitle.classList.add(
+                            "show"
+                        );
+
+                        successSubtitle.classList.add(
+                            "show"
+                        );
+
+                        successNote.classList.add(
+                            "show"
+                        );
+
+                    },
+                    2850
+                );
+
+
+            }catch(error){
+
+                console.error(
+                    "Form Submission Error:",
+                    error
+                );
+
+
+                showError(
+                    "Registration could not be submitted. Please try again."
+                );
+
+
+                submitBtn.disabled =
+                    false;
+
+
+                submitBtn.textContent =
+                    "Submit Registration";
+
+            }
+
+        }
+    );
+
+})();
+
+</script>
+
+</div>

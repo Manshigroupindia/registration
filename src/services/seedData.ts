@@ -1,0 +1,247 @@
+import { CertificateRecord, AwardRecord, Registration, ContactEnquiry, SiteSettings } from '../types';
+import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
+
+export const INITIAL_CERTIFICATES: CertificateRecord[] = [
+  {
+    id: 'ICG-2026-CERT-0849',
+    recipientName: 'Aarav Malhotra',
+    title: 'Runners-Up — Mr Iconic Category',
+    category: 'Mr Iconic Pageant',
+    eventName: 'Iconic Creation Of God 2026',
+    eventDate: '21 December 2026',
+    issueDate: '22 December 2026',
+    organizers: 'Deven Jha & Ritu Jha',
+    presenters: 'Janta Live News & Deven Jha Productions',
+    status: 'verified',
+    recipientPhotoUrl: BRAND_ASSETS.aaravMalhotra,
+    verificationCount: 14,
+    hashSeal: 'SHA256: 9e88be138a0f98c4d2931a293',
+    createdAt: '2026-12-22T10:00:00Z',
+  },
+  {
+    id: 'ICG-2026-CERT-0412',
+    recipientName: 'Pooja Kashyap',
+    title: 'Distinction in Creative Makeup Artistry & Transformation',
+    category: 'Makeup Competition & Seminar',
+    eventName: 'Iconic Creation Of God 2026',
+    eventDate: '21 December 2026',
+    issueDate: '21 December 2026',
+    organizers: 'Deven Jha & Ritu Jha',
+    presenters: 'Janta Live News & Deven Jha Productions',
+    status: 'verified',
+    recipientPhotoUrl: BRAND_ASSETS.poojaKashyap,
+    verificationCount: 29,
+    hashSeal: 'SHA256: 4b29f77e21a89c3d4e0821cde',
+    createdAt: '2026-12-21T18:30:00Z',
+  },
+  {
+    id: 'ICG-2026-REV-0112',
+    recipientName: 'Vikramaditya Rathore',
+    title: 'Candidate Accreditation — Runway Walk Division',
+    category: 'Mr Category',
+    eventName: 'Iconic Creation Of God 2026',
+    eventDate: '21 December 2026',
+    issueDate: '22 December 2026',
+    organizers: 'Deven Jha & Ritu Jha',
+    presenters: 'Janta Live News & Deven Jha Productions',
+    status: 'under_review',
+    verificationCount: 3,
+    createdAt: '2026-12-22T08:00:00Z',
+  },
+  {
+    id: 'ICG-2026-CERT-VOID',
+    recipientName: 'Rohit Verma',
+    title: 'Model Category Participant',
+    category: 'Mr Iconic Category',
+    eventName: 'Iconic Creation Of God 2026',
+    eventDate: '21 December 2026',
+    issueDate: '21 December 2026',
+    organizers: 'Deven Jha & Ritu Jha',
+    presenters: 'Janta Live News & Deven Jha Productions',
+    status: 'revoked',
+    revocationReason: 'Credential annulled due to non-attendance of rehearsal masterclass and verification audit failure.',
+    verificationCount: 7,
+    createdAt: '2026-12-21T09:00:00Z',
+  }
+];
+
+export const INITIAL_AWARDS: AwardRecord[] = [
+  {
+    id: 'ICG-AWD-2026-992',
+    recipientName: 'Pooja Kashyap',
+    awardTitle: 'Best Makeup Artist & Creative Transformation of the Year',
+    associatedCertificateNumber: 'ICG-2026-CERT-0412',
+    category: 'Makeup Competition & Seminar',
+    eventName: 'Iconic Creation Of God 2026',
+    eventDate: '21 December 2026',
+    issueDate: '21 December 2026',
+    guestOfHonour: 'Jivitha Sharma — Acclaimed Bollywood Actress',
+    organizers: 'Deven Jha & Ritu Jha',
+    presenters: 'Janta Live News & Deven Jha Productions',
+    status: 'verified',
+    recipientPhotoUrl: BRAND_ASSETS.poojaKashyap,
+    createdAt: '2026-12-21T21:45:00Z',
+  },
+  {
+    id: 'ICG-AWD-2026-884',
+    recipientName: 'Rohan Mehra',
+    awardTitle: 'Mr. Iconic Elegance Runway Distinction',
+    category: 'Mr Iconic Pageant',
+    eventName: 'Iconic Creation Of God 2026',
+    eventDate: '21 December 2026',
+    issueDate: '21 December 2026',
+    guestOfHonour: 'Jivitha Sharma — Acclaimed Bollywood Actress',
+    organizers: 'Deven Jha & Ritu Jha',
+    presenters: 'Janta Live News & Deven Jha Productions',
+    status: 'verified',
+    recipientPhotoUrl: BRAND_ASSETS.categoryMr,
+    createdAt: '2026-12-21T21:18:00Z',
+  },
+  {
+    id: 'ICG-AWD-2026-REV',
+    recipientName: 'Sameer Sen',
+    awardTitle: 'Excellence in Styling',
+    category: 'Runway Styling',
+    eventName: 'Iconic Creation Of God 2026',
+    eventDate: '21 December 2026',
+    issueDate: '21 December 2026',
+    guestOfHonour: 'Jivitha Sharma — Bollywood Actress',
+    organizers: 'Deven Jha & Ritu Jha',
+    presenters: 'Janta Live News & Deven Jha Productions',
+    status: 'revoked',
+    revocationReason: 'Revoked by the Disciplinary Committee on 24 Dec 2026 for breach of pageant participation covenant.',
+    createdAt: '2026-12-21T20:00:00Z',
+  }
+];
+
+export const INITIAL_REGISTRATIONS: Registration[] = [
+  {
+    id: 'ICG-2026-REG-1042',
+    fullName: 'Simran Walia',
+    dob: '2001-08-14',
+    category: 'Miss',
+    email: 'simran.walia@example.com',
+    phone: '9810123456',
+    city: 'New Delhi',
+    state: 'Delhi',
+    interestedIn: ['Modeling', 'Fashion Show', 'Devi And Diva Casting'],
+    experienceLevel: 'Intermediate',
+    portfolioUrl: 'https://instagram.com/simran_couture',
+    shortIntroduction: 'Passionate about Indian ethnic fashion and contemporary runway techniques. Seeking coronation and cinematic roles.',
+    photoUrl: BRAND_ASSETS.categoryMiss,
+    termsAccepted: true,
+    status: 'approved',
+    createdAt: '2026-10-15T14:20:00Z',
+  },
+  {
+    id: 'ICG-2026-REG-1043',
+    fullName: 'Karanvir Singh',
+    dob: '1998-03-22',
+    category: 'Mr',
+    email: 'karanvir.singh@example.com',
+    phone: '9876543210',
+    city: 'Gurugram',
+    state: 'Haryana',
+    interestedIn: ['Modeling', 'Fashion Show'],
+    experienceLevel: 'Beginner',
+    shortIntroduction: 'Eager to train under industry mentors at the masterclass seminar.',
+    photoUrl: BRAND_ASSETS.categoryMr,
+    termsAccepted: true,
+    status: 'pending',
+    createdAt: '2026-10-15T16:45:00Z',
+  },
+  {
+    id: 'ICG-2026-REG-1044',
+    fullName: 'Meenakshi Sharma',
+    dob: '1992-11-05',
+    category: 'Mrs',
+    email: 'meenakshi.sharma@example.com',
+    phone: '9911223344',
+    city: 'Noida',
+    state: 'Uttar Pradesh',
+    interestedIn: ['Modeling', 'Makeup Competition'],
+    experienceLevel: 'Professional',
+    portfolioUrl: 'https://instagram.com/meenakshi_makeovers',
+    shortIntroduction: 'Bridal salon director with 8 years of transformative styling experience.',
+    photoUrl: BRAND_ASSETS.categoryMrs,
+    termsAccepted: true,
+    status: 'approved',
+    createdAt: '2026-10-15T18:10:00Z',
+  }
+];
+
+export const INITIAL_ENQUIRIES: ContactEnquiry[] = [
+  {
+    id: 'ICG-ENQ-2026-001',
+    fullName: 'Rajesh Khanna',
+    email: 'rajesh.khanna@brandpartner.in',
+    phone: '9810011223',
+    subject: 'Title Sponsorship and Media Integration Inquiry',
+    enquiryType: 'Sponsorship',
+    message: 'We are a luxury men’s grooming brand based in Delhi NCR and would like to explore stage branding and gifting partner opportunities for Mr Iconic Creation of God.',
+    status: 'in_progress',
+    createdAt: '2026-10-15T11:00:00Z',
+  },
+  {
+    id: 'ICG-ENQ-2026-002',
+    fullName: 'Ananya Roy',
+    email: 'ananya.roy@glamstudio.com',
+    phone: '9899001122',
+    subject: 'Makeup Seminar kit requirements',
+    enquiryType: 'Registration',
+    message: 'Could you please confirm if candidate vanity mirrors and lighting stations are provided at the venue for the live competition track?',
+    status: 'pending',
+    createdAt: '2026-10-15T15:30:00Z',
+  }
+];
+
+export const INITIAL_SITE_SETTINGS: SiteSettings = {
+  eventName: EVENT_DETAILS.name,
+  eventTagline: 'A Celebration of Beauty, Talent, Fashion & Creativity',
+  presentedBy: EVENT_DETAILS.presentedBy,
+  eventDate: EVENT_DETAILS.date,
+  eventTime: EVENT_DETAILS.time,
+  eventLocation: EVENT_DETAILS.location,
+  organizers: {
+    devenJha: {
+      name: 'Deven Jha',
+      title: 'Event Organizer & Producer',
+      bio: 'Founder of Deven Jha Productions and media strategist. Dedicated to bringing uncompromised production standards to Indian runway fashion and emerging actors.',
+      photoUrl: BRAND_ASSETS.organizerDeven,
+      verified: true
+    },
+    rituJha: {
+      name: 'Ritu Jha',
+      title: 'Event Organizer & Curator',
+      bio: 'Visionary behind the pageant\'s artistic ethos and talent empowerment modules. Advocating for authentic celebration of women and multifaceted artists.',
+      photoUrl: BRAND_ASSETS.organizerRitu,
+      verified: true
+    }
+  },
+  celebrityGuest: {
+    name: 'Jivitha Sharma',
+    title: 'Bollywood Actress',
+    bio: 'The grand coronation of Iconic Creation Of God will be privileged by the distinguished presence of Bollywood actress Jivitha Sharma. As our esteemed Guest of Honour, she will officiate the grand trophy handovers and crown this year’s sovereigns.',
+    quote: 'Delhi NCR is a reservoir of authentic talent and untamed passion. Iconic Creation Of God creates a royal gateway for artists to shine under true national spotlight.',
+    photoUrl: BRAND_ASSETS.celebrityJivitha
+  },
+  contactEmail: 'contact@iconiccreationofgod.com',
+  contactPhone: '+91 98765 43210',
+  contactAddress: 'Delhi / NCR, India',
+  socialHandles: {
+    instagramJantaLive: 'https://instagram.com/jantalivenews',
+    instagramDevenJha: 'https://instagram.com/devenjhaproductions',
+    facebook: 'https://facebook.com/iconiccreationofgod',
+    youtube: 'https://youtube.com/@jantalivenews'
+  },
+  partnerWebsites: {
+    jantaLiveNews: 'https://jantalivenews.com',
+    devenJhaProductions: 'https://devenjhaproductions.com'
+  },
+  filmProject: {
+    title: 'Devi And Diva',
+    production: 'Deven Jha Productions',
+    description: 'Deven Jha Productions announces an exclusive casting prospect through the Iconic Creation Of God pageant. Standout contestants and exceptional makeup artists participating in this edition may be scouted for roles and makeup artistry in the upcoming cinematic short film ‘Devi And Diva’.',
+    bannerUrl: BRAND_ASSETS.deviAndDiva
+  }
+};
