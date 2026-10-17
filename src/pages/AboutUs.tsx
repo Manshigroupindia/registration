@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
-import { ShieldCheck, Film, Newspaper, ExternalLink, Target, Eye, Award, CheckCircle } from 'lucide-react';
+import { BRAND_ASSETS, EVENT_DETAILS, CONTACT_DETAILS } from '../assets/constants';
+import { ShieldCheck, Film, Newspaper, ExternalLink, Target, Eye, Award, CheckCircle, Phone, Mail, MessageCircle } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
 
 export const AboutUs: React.FC = () => {
@@ -205,11 +205,17 @@ export const AboutUs: React.FC = () => {
 
           {/* Ritu Jha */}
           <div className="p-space-xl rounded-3xl bg-surface-container border border-outline-variant/30 flex flex-col sm:flex-row items-center sm:items-start gap-space-lg shadow-xl">
-            <img
-              src={BRAND_ASSETS.organizerRitu}
-              alt="Ritu Jha"
-              className="w-36 h-36 rounded-2xl object-cover shrink-0 border-2 border-primary/40 shadow-lg"
-            />
+            <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden shrink-0 border-2 border-primary/40 shadow-lg bg-surface-container-high">
+              <img
+                src={BRAND_ASSETS.organizerRitu}
+                alt="Ritu Jha – Managing Director & Creative Curator"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = BRAND_ASSETS.organizerRitu;
+                }}
+              />
+            </div>
             <div className="flex flex-col text-center sm:text-left">
               <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">
                 Managing Director & Creative Curator
@@ -220,11 +226,56 @@ export const AboutUs: React.FC = () => {
               <p className="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
                 Championing women empowerment and bridal makeup artists, Ritu Jha crafts the artistic curriculum, catwalk choreography guidelines, and dignified presentation modules for the Mr, Miss, and Mrs pageant.
               </p>
-              <div className="mt-space-md inline-flex items-center gap-1.5 text-primary font-label-sm text-label-sm">
+              <div className="mt-space-md inline-flex items-center justify-center sm:justify-start gap-1.5 text-primary font-label-sm text-label-sm">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Verified National Pageant Curator</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Organizer Secretariat Contact Strip */}
+        <div className="mt-space-lg p-space-md sm:p-space-lg rounded-2xl bg-surface-container-high/60 border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-space-md text-center sm:text-left shadow-md">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-primary/15 text-primary flex items-center justify-center shrink-0">
+              <Phone className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-xs uppercase font-bold tracking-wider text-primary block">
+                Organizer Secretariat &amp; Inquiries Desk
+              </span>
+              <span className="font-body-sm text-on-surface font-semibold">
+                Direct desk access for auditions, nominations &amp; partnerships under Deven Jha &amp; Ritu Jha
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 shrink-0">
+            <a
+              href={CONTACT_DETAILS.phoneTel}
+              className="px-3.5 py-1.5 rounded-full bg-surface-container border border-outline-variant/30 text-on-surface hover:border-primary hover:text-primary transition-all text-xs font-semibold inline-flex items-center gap-1.5"
+              title="Call Secretariat"
+            >
+              <Phone className="w-3.5 h-3.5 text-primary" />
+              <span>{CONTACT_DETAILS.phoneDisplay}</span>
+            </a>
+            <a
+              href={CONTACT_DETAILS.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 transition-all text-xs font-semibold inline-flex items-center gap-1.5"
+              title="Chat on WhatsApp"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>WhatsApp</span>
+            </a>
+            <a
+              href={CONTACT_DETAILS.emailMailto}
+              className="px-3.5 py-1.5 rounded-full bg-surface-container border border-outline-variant/30 text-on-surface hover:border-primary hover:text-primary transition-all text-xs font-semibold inline-flex items-center gap-1.5"
+              title="Send Email"
+            >
+              <Mail className="w-3.5 h-3.5 text-primary" />
+              <span>{CONTACT_DETAILS.email}</span>
+            </a>
           </div>
         </div>
       </section>

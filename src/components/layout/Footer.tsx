@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BRAND_ASSETS, EVENT_DETAILS } from '../../assets/constants';
+import { BRAND_ASSETS, EVENT_DETAILS, CONTACT_DETAILS } from '../../assets/constants';
 
 export const Footer: React.FC = () => {
   return (
@@ -72,6 +72,37 @@ export const Footer: React.FC = () => {
               <p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
                 Visionaries behind the grand celebration of high-couture pageantry and talent excellence.
               </p>
+              <div className="mt-space-sm pt-space-xs border-t border-outline-variant/30 flex flex-col gap-1.5 text-xs">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <a
+                    href={CONTACT_DETAILS.phoneTel}
+                    className="text-on-surface-variant hover:text-primary transition-colors inline-flex items-center gap-1 font-medium"
+                    title="Call Secretariat"
+                  >
+                    <span className="material-symbols-outlined text-sm text-primary">call</span>
+                    <span>{CONTACT_DETAILS.phoneDisplay}</span>
+                  </a>
+                  <span className="text-outline-variant">•</span>
+                  <a
+                    href={CONTACT_DETAILS.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1 font-medium"
+                    title="WhatsApp Chat"
+                  >
+                    <span className="material-symbols-outlined text-sm">chat</span>
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+                <a
+                  href={CONTACT_DETAILS.emailMailto}
+                  className="text-on-surface-variant hover:text-primary transition-colors inline-flex items-center gap-1 font-medium break-all"
+                  title="Send Email"
+                >
+                  <span className="material-symbols-outlined text-sm text-primary">mail</span>
+                  <span>{CONTACT_DETAILS.email}</span>
+                </a>
+              </div>
             </div>
 
             <div className="flex flex-col gap-space-xs">

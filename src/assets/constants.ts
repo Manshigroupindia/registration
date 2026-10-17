@@ -15,6 +15,17 @@ export const BRAND_ASSETS = {
   vipAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBIyWA6_4gBHvy2yWYF4ic55Q1cRRvRwEicdXkjptqfcw_z-9HzbFFnR3dwWTbT014C79Wlnm_cxzWIi8JwIOtAfnOMjrwI_wpR9XyNacpbfqN6J0dQsb_hjsyC_A6SGEtaXWERaYP2e7lH5E7qhKKBwvUKS0ZcXhcU8hcC1iGwUxlKvxggHR8xPjP-kE-M4iKWeD4gA8bmoYfxfreezYRSyk2oYyVirjIxAsU2RxnjOGPMAQmwHeCI',
 };
 
+export const CONTACT_DETAILS = {
+  phone: '+91 8750505355',
+  phoneDisplay: '+91 8750505355',
+  phoneTel: 'tel:+918750505355',
+  whatsappUrl: 'https://wa.me/918750505355',
+  email: 'eventregistration@jantalive.in',
+  emailMailto: 'mailto:eventregistration@jantalive.in',
+  location: 'Delhi / NCR',
+  timing: '10:00 AM – 6:00 PM IST',
+};
+
 export const EVENT_DETAILS = {
   name: 'Iconic Creation Of God',
   subtitle: 'Mr / Miss / Mrs',
@@ -24,6 +35,36 @@ export const EVENT_DETAILS = {
   presentedBy: 'Janta Live News & Deven Jha Productions',
   organizers: 'Deven Jha & Ritu Jha',
   celebrityGuest: 'Jividha Sharma — Bollywood Actress',
+  phone: '+91 8750505355',
+  phoneTel: 'tel:+918750505355',
+  whatsappUrl: 'https://wa.me/918750505355',
+  email: 'eventregistration@jantalive.in',
+  emailMailto: 'mailto:eventregistration@jantalive.in',
+};
+
+export const ORGANIZERS_PROFILE = {
+  devenJha: {
+    name: 'Deven Jha',
+    title: 'Event Organizer & Producer',
+    designation: 'Founder, Producer & Media Strategist',
+    bio: 'Founder of Deven Jha Productions and media strategist. Dedicated to bringing uncompromised production standards to Indian runway fashion and emerging actors.',
+    aboutBio:
+      'With a rich career bridging news broadcasting and commercial film production, Deven Jha brings rigorous stage management, ethical jury standards, and pan-Indian visibility to Iconic Creation Of God.',
+    photo: BRAND_ASSETS.organizerDeven,
+    alt: 'Deven Jha – Event Organizer & Producer',
+    verified: true,
+  },
+  rituJha: {
+    name: 'Ritu Jha',
+    title: 'Event Organizer & Curator',
+    designation: 'Managing Director & Creative Curator',
+    bio: "Visionary behind the pageant's artistic ethos and talent empowerment modules. Advocating for authentic celebration of women and multifaceted artists.",
+    aboutBio:
+      'Championing women empowerment and bridal makeup artists, Ritu Jha crafts the artistic curriculum, catwalk choreography guidelines, and dignified presentation modules for the Mr, Miss, and Mrs pageant.',
+    photo: BRAND_ASSETS.organizerRitu,
+    alt: 'Ritu Jha – Event Organizer & Curator',
+    verified: true,
+  },
 };
 
 export const CELEBRITY_PROFILE = {

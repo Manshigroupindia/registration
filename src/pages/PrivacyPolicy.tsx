@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
+import { CONTACT_DETAILS } from '../assets/constants';
 
 export const PrivacyPolicy: React.FC = () => {
   return (
@@ -69,7 +70,24 @@ export const PrivacyPolicy: React.FC = () => {
         <div className="flex flex-col gap-2">
           <h2 className="font-title-lg text-title-lg text-on-surface font-bold">5. Contact Regarding Privacy Inquiries</h2>
           <p>
-            For inquiries regarding your stored registration records or to request data amendment, contact our coordination desk at <code className="text-primary font-mono">contact@iconiccreationofgod.com</code>.
+            For inquiries regarding your stored registration records or to request data amendment, contact our coordination desk at{' '}
+            <a href={CONTACT_DETAILS.emailMailto} className="text-primary hover:underline font-mono">
+              {CONTACT_DETAILS.email}
+            </a>{' '}
+            or call/WhatsApp our secretariat at{' '}
+            <a href={CONTACT_DETAILS.phoneTel} className="text-primary hover:underline font-mono">
+              {CONTACT_DETAILS.phoneDisplay}
+            </a>{' '}
+            (
+            <a
+              href={CONTACT_DETAILS.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 hover:underline font-mono"
+            >
+              WhatsApp
+            </a>
+            ).
           </p>
         </div>
       </section>

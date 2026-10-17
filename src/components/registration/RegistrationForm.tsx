@@ -231,11 +231,14 @@ export const RegistrationForm: React.FC = () => {
       });
 
       if (!fcResponse.ok) {
-        let errDesc = 'Formcarry server returned an error.';
+        let errDesc = 'Unable to complete registration. Please check your details and try again.';
         try {
           const fcJson = await fcResponse.json();
           if (fcJson?.message || fcJson?.error) {
-            errDesc = fcJson.message || fcJson.error;
+            const rawMsg = fcJson.message || fcJson.error;
+            errDesc = typeof rawMsg === 'string'
+              ? rawMsg.replace(/formcarry/gi, 'registration service').replace(/emailjs/gi, 'notification service')
+              : 'Unable to complete registration. Please check your details and try again.';
           }
         } catch {}
         throw new Error(errDesc);
@@ -309,9 +312,10 @@ export const RegistrationForm: React.FC = () => {
       });
     } catch (err: any) {
       console.error('Registration Submission Error:', err);
-      setFormError(
-        err.message || 'Registration could not be completed. Please check your connection and retry.'
-      );
+      const cleanMsg = err?.message
+        ? String(err.message).replace(/formcarry/gi, 'registration service').replace(/emailjs/gi, 'notification service')
+        : 'Registration could not be completed. Please check your connection and retry.';
+      setFormError(cleanMsg);
     } finally {
       setIsSubmitting(false);
     }
@@ -337,12 +341,12 @@ export const RegistrationForm: React.FC = () => {
         </span>
 
         <h2 className="font-serif text-2xl sm:text-4xl font-bold text-on-surface mb-3">
-          Your Registration Form Submitted Successfully
+          Your Registration Has Been Submitted Successfully
         </h2>
 
-        <p className="text-sm sm:text-base text-on-surface-variant max-w-lg mx-auto mb-6">
+        <p className="text-sm sm:text-base text-on-surface-variant max-w-lg mx-auto mb-6 leading-relaxed">
           Thank you, <strong className="text-primary">{submittedData.candidateName}</strong>! Your registration for{' '}
-          <strong className="text-on-surface">{submittedData.category}</strong> has been transmitted via Formcarry and secured in the official database.
+          <strong className="text-on-surface">Iconic Creation Of God — Mr/Miss/Mrs</strong> has been received successfully.
         </p>
 
         {/* Reference Code Card */}
@@ -353,19 +357,34 @@ export const RegistrationForm: React.FC = () => {
           <span className="font-mono text-xl sm:text-2xl font-bold text-primary tracking-wider mt-1">
             {submittedData.referenceId}
           </span>
+          {submittedData.category && (
+            <span className="mt-1.5 px-3 py-0.5 rounded-full bg-primary/10 text-primary text-[11px] font-semibold tracking-wide">
+              {submittedData.category}
+            </span>
+          )}
         </div>
 
-        <div className="text-xs text-on-surface-variant space-y-1 mb-8">
-          <p>• Formcarry Record: Transmitted and logged.</p>
-          <p>
-            • Email Dispatch:{' '}
-            {submittedData.emailSent ? (
-              <span className="text-emerald-500 font-semibold">Sent to candidate email via EmailJS</span>
-            ) : (
-              <span className="text-amber-500">Notice queued for delivery</span>
-            )}
+        <div className="text-xs text-on-surface-variant space-y-2 mb-8 text-left max-w-md mx-auto">
+          <p className="flex items-start gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
+            <span>Your registration details have been submitted successfully.</span>
           </p>
-          <p>• Our jury and coordinating team will reach you shortly on WhatsApp / Phone.</p>
+          <p className="flex items-start gap-2">
+            <span
+              className={`w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 ${
+                submittedData.emailSent ? 'bg-emerald-500' : 'bg-amber-500'
+              }`}
+            />
+            <span>
+              {submittedData.emailSent
+                ? 'A confirmation email has been sent to your registered email address.'
+                : 'A confirmation email will be sent if email delivery is successful.'}
+            </span>
+          </p>
+          <p className="flex items-start gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+            <span>Our event coordination team will contact you regarding the next steps.</span>
+          </p>
         </div>
 
         <button
@@ -801,7 +820,7 @@ export const RegistrationForm: React.FC = () => {
             {isSubmitting ? (
               <>
                 <Loader2 className="w-5 h-5 animate-spin" />
-                <span>Submitting Registration via Formcarry...</span>
+                <span>Submitting...</span>
               </>
             ) : (
               <>
@@ -811,7 +830,7 @@ export const RegistrationForm: React.FC = () => {
             )}
           </button>
           <p className="text-center text-[11px] text-on-surface-variant mt-3">
-            Secure submission processed via Formcarry API & EmailJS. Instant reference verification upon transmission.
+            Secure 256-bit encrypted submission. Official reference verification provided immediately upon registration.
           </p>
         </div>
       </form>

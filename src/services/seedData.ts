@@ -225,8 +225,8 @@ export const INITIAL_SITE_SETTINGS: SiteSettings = {
     quote: 'Delhi NCR is a reservoir of authentic talent and untamed passion. Iconic Creation Of God creates a royal gateway for artists to shine under true national spotlight.',
     photoUrl: BRAND_ASSETS.celebrityJivitha
   },
-  contactEmail: 'contact@iconiccreationofgod.com',
-  contactPhone: '+91 98765 43210',
+  contactEmail: 'eventregistration@jantalive.in',
+  contactPhone: '+91 8750505355',
   contactAddress: 'Delhi / NCR, India',
   socialHandles: {
     instagramJantaLive: 'https://instagram.com/jantalivenews',

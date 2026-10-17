@@ -5,7 +5,9 @@
 **Event Location:** Delhi / NCR  
 **Event Time:** 10:00 AM to 6:00 PM IST  
 **Honorable Organizers:** Deven Jha & Ritu Jha  
-**Guest of Honour:** Jivitha Sharma — Bollywood Actress  
+**Guest of Honour:** Jividha Sharma — Bollywood Actress  
+**Phone / WhatsApp:** [+91 8750505355](tel:+918750505355) ([WhatsApp](https://wa.me/918750505355))  
+**Email:** [eventregistration@jantalive.in](mailto:eventregistration@jantalive.in)  
 
 ---
 

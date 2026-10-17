@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
+import { BRAND_ASSETS, EVENT_DETAILS, CONTACT_DETAILS } from '../assets/constants';
 import { SEO } from '../components/common/SEO';
 import { CelebrityGuestProfile } from '../components/common/CelebrityGuestProfile';
 
@@ -540,11 +540,15 @@ export const Home: React.FC = () => {
 
             {/* Ritu Jha Card */}
             <div className="p-space-lg rounded-2xl bg-surface-container border border-outline-variant/30 flex flex-col sm:flex-row items-center sm:items-start gap-space-md shadow-lg">
-              <div className="w-28 h-28 rounded-full overflow-hidden shrink-0 shadow-md border-2 border-primary/40">
+              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shrink-0 shadow-md border-2 border-primary/40 bg-surface-container-high">
                 <img
                   src={BRAND_ASSETS.organizerRitu}
-                  alt="Ritu Jha"
+                  alt="Ritu Jha – Event Organizer & Curator of Iconic Creation Of God"
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = BRAND_ASSETS.organizerRitu;
+                  }}
                 />
               </div>
               <div className="flex-1 text-center sm:text-left">
@@ -555,12 +559,52 @@ export const Home: React.FC = () => {
                   Ritu Jha
                 </h3>
                 <p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
-                  Visionary behind the pageant's artistic ethos and talent empowerment modules. Advocating for authentic celebration of women and multifaceted artists.
+                  Visionary behind the pageant's artistic ethos and talent empowerment modules. Advocating for authentic celebration of women and multifaceted artists across India.
                 </p>
                 <div className="mt-space-sm inline-flex items-center gap-1 font-label-sm text-label-sm text-outline">
                   <span className="material-symbols-outlined text-xs text-primary">verified</span> Verified Organizer
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Organizer Secretariat Contact Bar */}
+          <div className="mt-space-lg max-w-4xl mx-auto p-space-md sm:p-space-lg rounded-2xl bg-surface-container border border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-md text-center sm:text-left shadow-md">
+            <div>
+              <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold block">
+                Organizer Secretariat Desk
+              </span>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                For auditions, nominations &amp; partnerships under Deven Jha &amp; Ritu Jha
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-2 shrink-0">
+              <a
+                href={CONTACT_DETAILS.phoneTel}
+                className="px-3.5 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-on-surface hover:text-primary hover:border-primary transition-colors text-xs font-semibold inline-flex items-center gap-1.5"
+                title="Call Secretariat"
+              >
+                <span className="material-symbols-outlined text-sm text-primary">call</span>
+                <span>{CONTACT_DETAILS.phoneDisplay}</span>
+              </a>
+              <a
+                href={CONTACT_DETAILS.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 transition-colors text-xs font-semibold inline-flex items-center gap-1.5"
+                title="Chat on WhatsApp"
+              >
+                <span className="material-symbols-outlined text-sm">chat</span>
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href={CONTACT_DETAILS.emailMailto}
+                className="px-3.5 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-on-surface hover:text-primary hover:border-primary transition-colors text-xs font-semibold inline-flex items-center gap-1.5"
+                title="Send Email"
+              >
+                <span className="material-symbols-outlined text-sm text-primary">mail</span>
+                <span>{CONTACT_DETAILS.email}</span>
+              </a>
             </div>
           </div>
         </div>

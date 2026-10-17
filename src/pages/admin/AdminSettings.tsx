@@ -3,7 +3,7 @@ import { settingsService } from '../../services/settingsService';
 import { SiteSettings } from '../../types';
 import { AdminNavbar } from '../../components/layout/AdminNavbar';
 import { AdminSidebar } from '../../components/layout/AdminSidebar';
-import { Sliders, Save, CheckCircle2, Globe, Share2, Users, Calendar, MapPin, Sparkles } from 'lucide-react';
+import { Sliders, Save, CheckCircle2, Globe, Share2, Users, Calendar, MapPin, Sparkles, Phone } from 'lucide-react';
 
 export const AdminSettings: React.FC = () => {
   const [settings, setSettings] = useState<SiteSettings | null>(null);
@@ -151,6 +151,42 @@ export const AdminSettings: React.FC = () => {
                   />
                 </div>
 
+                <div className="flex flex-col gap-1">
+                  <label className="text-xs uppercase text-outline">Deven Jha Photo URL</label>
+                  <input
+                    type="url"
+                    value={settings.organizers.devenJha.photoUrl}
+                    onChange={(e) =>
+                      setSettings({
+                        ...settings,
+                        organizers: {
+                          ...settings.organizers,
+                          devenJha: { ...settings.organizers.devenJha, photoUrl: e.target.value },
+                        },
+                      })
+                    }
+                    className="p-3 rounded-xl bg-surface-container-high text-on-surface text-body-sm border border-outline-variant/30"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <label className="text-xs uppercase text-outline">Ritu Jha Photo URL</label>
+                  <input
+                    type="url"
+                    value={settings.organizers.rituJha.photoUrl}
+                    onChange={(e) =>
+                      setSettings({
+                        ...settings,
+                        organizers: {
+                          ...settings.organizers,
+                          rituJha: { ...settings.organizers.rituJha, photoUrl: e.target.value },
+                        },
+                      })
+                    }
+                    className="p-3 rounded-xl bg-surface-container-high text-on-surface text-body-sm border border-outline-variant/30"
+                  />
+                </div>
+
                 <div className="flex flex-col gap-1 md:col-span-2">
                   <label className="text-xs uppercase text-outline">Celebrity Guest of Honour</label>
                   <input
@@ -234,6 +270,38 @@ export const AdminSettings: React.FC = () => {
                         socialHandles: { ...settings.socialHandles, instagramDevenJha: e.target.value },
                       })
                     }
+                    className="p-3 rounded-xl bg-surface-container-high text-on-surface text-body-sm border border-outline-variant/30"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* 4. Contact & Secretariat Information */}
+            <div className="p-space-lg rounded-3xl bg-surface-container border border-outline-variant/30 shadow-xl flex flex-col gap-space-md">
+              <div className="flex items-center gap-2 pb-space-xs border-b border-surface-variant/40">
+                <Phone className="w-5 h-5 text-primary" />
+                <h2 className="font-title-lg text-title-lg text-on-surface font-bold">
+                  Secretariat &amp; Contact Desk
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                <div className="flex flex-col gap-1">
+                  <label className="text-xs uppercase text-outline">Official Contact Phone / WhatsApp</label>
+                  <input
+                    type="text"
+                    value={settings.contactPhone}
+                    onChange={(e) => setSettings({ ...settings, contactPhone: e.target.value })}
+                    className="p-3 rounded-xl bg-surface-container-high text-on-surface text-body-sm border border-outline-variant/30"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <label className="text-xs uppercase text-outline">Official Contact Email</label>
+                  <input
+                    type="email"
+                    value={settings.contactEmail}
+                    onChange={(e) => setSettings({ ...settings, contactEmail: e.target.value })}
                     className="p-3 rounded-xl bg-surface-container-high text-on-surface text-body-sm border border-outline-variant/30"
                   />
                 </div>

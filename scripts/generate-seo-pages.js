@@ -211,6 +211,12 @@ const ROUTES_CONFIG = [
       url: `${BASE_URL}/contact`,
       name: 'Contact Secretariat Desk | Iconic Creation Of God',
       description: 'Get in touch with the Iconic Creation Of God organizing committee for audition queries, sponsorship partnerships, and media accreditations.',
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'Iconic Creation Of God',
+        telephone: '+918750505355',
+        email: 'eventregistration@jantalive.in',
+      },
     },
   },
   {
