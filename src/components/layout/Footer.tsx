@@ -104,6 +104,22 @@ export const Footer: React.FC = () => {
             </Link>
           </div>
         </div>
+
+        {/* Developer Credit */}
+        <div className="pt-space-md mt-space-md border-t border-surface-variant/20 flex items-center justify-center text-center">
+          <a
+            href="https://www.manshigroup.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Designed & Developed by Manshi Group of Services"
+            className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors inline-flex flex-wrap items-center justify-center gap-1.5 text-center group"
+          >
+            <span>Designed & Developed by</span>
+            <span className="font-semibold text-primary group-hover:underline underline-offset-4">
+              Manshi Group of Services
+            </span>
+          </a>
+        </div>
       </div>
     </footer>
   );
