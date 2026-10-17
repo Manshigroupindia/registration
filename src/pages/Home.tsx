@@ -1,58 +1,10 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { BRAND_ASSETS, EVENT_DETAILS } from '../assets/constants';
-import { registrationService } from '../services/registrationService';
-import { PageantCategory } from '../types';
 import { SEO } from '../components/common/SEO';
 import { CelebrityGuestProfile } from '../components/common/CelebrityGuestProfile';
 
 export const Home: React.FC = () => {
-  const navigate = useNavigate();
-  const [quickForm, setQuickForm] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    category: '' as PageantCategory | '',
-    city: '',
-  });
-  const [quickSubmitting, setQuickSubmitting] = useState(false);
-  const [quickSuccess, setQuickSuccess] = useState<string | null>(null);
-  const [quickError, setQuickError] = useState<string | null>(null);
-
-  const handleQuickSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!quickForm.category) {
-      setQuickError('Please select a participation category.');
-      return;
-    }
-    setQuickSubmitting(true);
-    setQuickError(null);
-
-    const res = await registrationService.submit({
-      fullName: quickForm.fullName,
-      dob: '2000-01-01', // default placeholder for quick form
-      category: quickForm.category as PageantCategory,
-      email: quickForm.email,
-      phone: quickForm.phone,
-      city: quickForm.city || 'Delhi NCR',
-      state: 'Delhi NCR',
-      interestedIn: [
-        quickForm.category === 'Mr' || quickForm.category === 'Miss' || quickForm.category === 'Mrs'
-          ? 'Modeling'
-          : 'Makeup Competition',
-      ],
-      experienceLevel: 'Beginner',
-      termsAccepted: true,
-    });
-
-    setQuickSubmitting(false);
-    if (res.success && res.registration) {
-      setQuickSuccess(res.registration.id);
-    } else {
-      setQuickError(res.error || 'Failed to submit candidate registration.');
-    }
-  };
-
   return (
     <div className="flex flex-col w-full overflow-hidden">
       <SEO
@@ -328,7 +280,7 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
                 <Link
-                  to="/register?category=Mr"
+                  to="/register"
                   className="mt-space-md w-full py-3 rounded-full bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md uppercase font-semibold text-center transition-colors"
                 >
                   Register for Mr
@@ -375,7 +327,7 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
                 <Link
-                  to="/register?category=Miss"
+                  to="/register"
                   className="mt-space-md w-full py-3 rounded-full bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md uppercase font-semibold text-center transition-colors shadow-lg"
                 >
                   Register for Miss
@@ -417,7 +369,7 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
                 <Link
-                  to="/register?category=Mrs"
+                  to="/register"
                   className="mt-space-md w-full py-3 rounded-full bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md uppercase font-semibold text-center transition-colors"
                 >
                   Register for Mrs
@@ -614,169 +566,67 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* QUICK REGISTRATION SECTION */}
-      <section className="w-full px-margin-mobile lg:px-margin py-space-xl max-w-4xl mx-auto" id="register">
-        <div className="p-space-lg lg:p-space-xl rounded-3xl bg-surface-container border border-primary/30 shadow-2xl relative">
-          <div className="text-center max-w-xl mx-auto mb-space-lg">
-            <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
-              Enrolment Form
-            </span>
-            <h2 className="font-headline-xl text-headline-xl text-on-surface mt-space-xs font-semibold">
-              Claim Your Spotlight
+      {/* REGISTRATION CTA SECTION */}
+      <section className="w-full px-margin-mobile lg:px-margin py-space-xl max-w-5xl mx-auto" id="register">
+        <div className="relative rounded-3xl bg-gradient-to-b from-surface-container via-surface-container-high to-surface-container p-space-lg sm:p-space-xl md:p-14 border border-primary/40 shadow-2xl overflow-hidden text-center">
+          {/* Ambient Spotlight Background Accent */}
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/15 blur-[100px] rounded-full pointer-events-none"></div>
+
+          <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+            {/* Crown / Star Luxury Badge */}
+            <div className="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-lowest/80 border border-primary/30 shadow-md mb-space-md">
+              <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+                award_star
+              </span>
+              <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
+                Official Audition &amp; Candidate Portal
+              </span>
+            </div>
+
+            {/* Main Title */}
+            <h2 className="font-headline-xl text-headline-xl text-on-surface uppercase font-semibold tracking-wide">
+              Ready to Claim Your <span className="text-primary italic font-normal">Spotlight?</span>
             </h2>
-            <p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
-              Submit your preliminary nomination details for Mr / Miss / Mrs category or Makeup Seminar & Competition entry. Or visit our{' '}
-              <Link to="/register" className="text-primary underline font-semibold">
-                Comprehensive 3-Step Dossier
-              </Link>.
+
+            {/* Short Description */}
+            <p className="font-body-lg text-body-lg text-on-surface-variant mt-space-md max-w-2xl leading-relaxed">
+              Step onto Delhi NCR&apos;s grandest coronation stage. Take your place among India&apos;s finest talents and register for the prestigious <strong className="text-on-surface font-semibold">Mr, Miss &amp; Mrs Iconic Creation Of God 2026</strong>, presented by Janta Live News &amp; Deven Jha Productions.
+            </p>
+
+            {/* Action Buttons */}
+            <div className="mt-space-xl flex flex-col sm:flex-row items-center justify-center gap-space-md w-full sm:w-auto">
+              <Link
+                to="/register"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-4 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase font-bold tracking-wider hover:bg-primary hover:text-on-primary shadow-gold-glow hover:scale-105 active:scale-95 transition-all duration-300"
+              >
+                <span>Register Now</span>
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </Link>
+              <Link
+                to="/event"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-4 rounded-full bg-surface-container-high text-on-surface border border-outline-variant/40 font-label-lg text-label-lg uppercase font-semibold hover:bg-surface-variant hover:border-primary/40 active:scale-95 transition-all duration-300"
+              >
+                <span>Explore Event Details</span>
+                <span className="material-symbols-outlined text-base">explore</span>
+              </Link>
+            </div>
+
+            {/* Small Note */}
+            <p className="mt-space-lg inline-flex items-center justify-center gap-1.5 px-space-md py-2 rounded-full bg-surface-container-lowest/60 border border-outline-variant/20 text-on-surface-variant font-body-sm text-body-sm">
+              <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+                verified_user
+              </span>
+              <span>Complete your registration through our official registration portal.</span>
             </p>
           </div>
-
-          {quickSuccess ? (
-            <div className="p-space-lg rounded-2xl bg-surface-container-high border border-primary/40 text-center flex flex-col items-center gap-3">
-              <span className="material-symbols-outlined text-4xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>
-                check_circle
-              </span>
-              <h3 className="font-headline-md text-headline-md text-primary font-bold">
-                Registration Confirmed!
-              </h3>
-              <p className="font-body-md text-body-md text-on-surface">
-                Your nomination has been successfully submitted under Reference ID:
-              </p>
-              <div className="px-space-lg py-2 rounded-xl bg-surface-container-lowest font-mono text-primary font-bold text-lg border border-primary/30">
-                {quickSuccess}
-              </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant max-w-md">
-                Our pageant secretariat will review your credentials and contact you via WhatsApp for document verification.
-              </p>
-              <button
-                onClick={() => {
-                  setQuickSuccess(null);
-                  setQuickForm({ fullName: '', phone: '', email: '', category: '', city: '' });
-                }}
-                className="mt-2 px-space-lg py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md uppercase font-bold"
-              >
-                Submit Another Entry
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleQuickSubmit} className="flex flex-col gap-space-md">
-              {quickError && (
-                <div className="p-space-md rounded-xl bg-secondary-container text-on-secondary-container font-body-sm text-body-sm flex items-center gap-2">
-                  <span className="material-symbols-outlined text-base">error</span>
-                  <span>{quickError}</span>
-                </div>
-              )}
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-sm text-label-sm uppercase text-outline">Full Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={quickForm.fullName}
-                    onChange={(e) => setQuickForm({ ...quickForm, fullName: e.target.value })}
-                    placeholder="Your Sovereign Name"
-                    className="w-full px-space-md py-3 rounded-lg bg-surface-container-high text-on-surface placeholder:text-outline-variant font-body-sm focus:outline-none focus:ring-1 focus:ring-primary border border-outline-variant/30"
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-sm text-label-sm uppercase text-outline">WhatsApp Mobile Number *</label>
-                  <input
-                    type="tel"
-                    required
-                    maxLength={10}
-                    value={quickForm.phone}
-                    onChange={(e) => setQuickForm({ ...quickForm, phone: e.target.value })}
-                    placeholder="98765 43210"
-                    className="w-full px-space-md py-3 rounded-lg bg-surface-container-high text-on-surface placeholder:text-outline-variant font-body-sm focus:outline-none focus:ring-1 focus:ring-primary border border-outline-variant/30"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-sm text-label-sm uppercase text-outline">Email Address *</label>
-                  <input
-                    type="email"
-                    required
-                    value={quickForm.email}
-                    onChange={(e) => setQuickForm({ ...quickForm, email: e.target.value })}
-                    placeholder="contact@domain.com"
-                    className="w-full px-space-md py-3 rounded-lg bg-surface-container-high text-on-surface placeholder:text-outline-variant font-body-sm focus:outline-none focus:ring-1 focus:ring-primary border border-outline-variant/30"
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-sm text-label-sm uppercase text-outline">Category Participation *</label>
-                  <select
-                    required
-                    value={quickForm.category}
-                    onChange={(e) => setQuickForm({ ...quickForm, category: e.target.value as PageantCategory })}
-                    className="w-full px-space-md py-3 rounded-lg bg-surface-container-high text-on-surface font-body-sm focus:outline-none focus:ring-1 focus:ring-primary border border-outline-variant/30"
-                  >
-                    <option value="" disabled>Select Category</option>
-                    <option value="Mr">Mr Iconic Creation Of God</option>
-                    <option value="Miss">Miss Iconic Creation Of God</option>
-                    <option value="Mrs">Mrs Iconic Creation Of God</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-1">
-                <label className="font-label-sm text-label-sm uppercase text-outline">City / State *</label>
-                <input
-                  type="text"
-                  required
-                  value={quickForm.city}
-                  onChange={(e) => setQuickForm({ ...quickForm, city: e.target.value })}
-                  placeholder="e.g. New Delhi, Gurugram, Noida"
-                  className="w-full px-space-md py-3 rounded-lg bg-surface-container-high text-on-surface placeholder:text-outline-variant font-body-sm focus:outline-none focus:ring-1 focus:ring-primary border border-outline-variant/30"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={quickSubmitting}
-                className="mt-space-sm w-full py-4 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase font-bold tracking-wider hover:bg-primary shadow-gold-glow transition-all duration-300 disabled:opacity-50"
-              >
-                {quickSubmitting ? 'Registering...' : 'Submit Candidate Registration'}
-              </button>
-
-              <div className="text-center mt-2">
-                <Link to="/register" className="font-label-sm text-label-sm text-primary uppercase tracking-wider hover:underline">
-                  Need to upload portfolio photos & detailed bio? Go to Full Registration Page →
-                </Link>
-              </div>
-            </form>
-          )}
         </div>
       </section>
 
-      {/* CTA BANNER & SOCIAL HANDLES */}
+      {/* SOCIAL MEDIA HANDLES */}
       <section className="w-full bg-surface-container-lowest py-space-xl">
         <div className="w-full px-margin-mobile lg:px-margin max-w-7xl mx-auto">
-          <div className="relative rounded-3xl bg-gradient-to-r from-surface-container to-surface-container-high p-space-xl border border-primary/30 flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-2xl">
-            <div className="max-w-2xl text-center md:text-left">
-              <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
-                Delhi NCR Mega Stage
-              </span>
-              <h2 className="font-headline-xl text-headline-xl text-on-surface mt-space-xs font-semibold">
-                Ready to Take the Spotlight? Join the Grandest Stage
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant mt-space-xs">
-                Presented by Janta Live News & Deven Jha Productions. 21 December 2026.
-              </p>
-            </div>
-            <Link
-              to="/register"
-              className="shrink-0 px-space-xl py-4 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase font-bold tracking-wider hover:bg-primary hover:text-on-primary shadow-2xl transition-all duration-300"
-            >
-              Register Now
-            </Link>
-          </div>
-
           {/* Social Media Connect */}
-          <div className="mt-space-xl flex flex-col sm:flex-row items-center justify-center gap-space-md text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-space-md text-center">
             <span className="font-label-md text-label-md uppercase tracking-widest text-outline">
               Follow Official Handles:
             </span>
